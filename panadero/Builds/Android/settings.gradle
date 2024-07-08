@@ -1,0 +1,2 @@
+rootProject.name = 'panadero'
+include ':app'
