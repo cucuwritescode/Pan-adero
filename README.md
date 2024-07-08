@@ -14,7 +14,7 @@ Pan-adero is a rhythmic automatic panning audio effect plugin designed to bring 
 - **Phase Control**: Offset the phase of the panning LFO to create interesting stereo effects and interactions.
 - **Shape Control**: Morph the waveform of the panning LFO to create smooth or jagged panning patterns.
 
-##Context
+## Context
 The autopan effect has its roots in the early days of stereo audio processing, becoming particularly popular in the 1960s and 1970s. Classic analog equipment like the Maestro PS-1 Phase Shifter, PanScan and Spanner.
 
 ## Technical Specifications
