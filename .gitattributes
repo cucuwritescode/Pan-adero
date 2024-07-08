@@ -1,0 +1,2 @@
+# Recognize Faust language for .dsp files
+*.dsp linguist-language=Faust
