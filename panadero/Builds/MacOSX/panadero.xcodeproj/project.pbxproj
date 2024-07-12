@@ -30,6 +30,7 @@
 		046C0D3DED968AD1C89F0CE0 /* include_juce_audio_formats.mm */ = {isa = PBXBuildFile; fileRef = E4B6CA02C0AD53DEB1776A48; };
 		05722E8150292D90B6F419E1 /* include_juce_audio_plugin_client_AU_1.mm */ = {isa = PBXBuildFile; fileRef = A207F04D52C4743964979D4F; };
 		061D7C82BAC229747FFE884E /* include_juce_events.mm */ = {isa = PBXBuildFile; fileRef = 43B3DAA6C812572B4E616349; };
+		067031D66100B8CC9F3D3856 /* BinaryData.cpp */ = {isa = PBXBuildFile; fileRef = 3ABAE360A76601C40987D0FA; };
 		0AA102146D479B250B52960C /* include_juce_midi_ci.cpp */ = {isa = PBXBuildFile; fileRef = B2018A0A37A0AA768C73CF70; };
 		0B00FD42FFA2B58651A16A7F /* include_juce_analytics.cpp */ = {isa = PBXBuildFile; fileRef = AB36E1B8E9949D31772DA69F; };
 		1033775656052F54CCE27D7C /* include_juce_opengl.mm */ = {isa = PBXBuildFile; fileRef = 5EB728C647F710D5C988D427; };
@@ -104,37 +105,61 @@
 /* Begin PBXFileReference section */
 		031C155E7F7F935F28539433 /* JuceHeader.h */ /* JuceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = SOURCE_ROOT; };
 		0D2E4A13B5785619B35A727C /* Standalone Plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = panadero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E524A451CD9AECDF60369C3 /* Motter Ombra Normal.ttf */ /* Motter Ombra Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Motter Ombra Normal.ttf"; path = "../../../../../../Desktop/Design/Fonts/Motter Ombra Normal/Motter Ombra Normal.ttf"; sourceTree = SOURCE_ROOT; };
 		0EB6B8D38B3F247BA9FB2AE1 /* include_juce_cryptography.mm */ /* include_juce_cryptography.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_cryptography.mm; path = ../../JuceLibraryCode/include_juce_cryptography.mm; sourceTree = SOURCE_ROOT; };
+		0FB4FF653B582DF52D4E4885 /* Berthold-akzidenz-grotesk-be-bold.ttf */ /* Berthold-akzidenz-grotesk-be-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-bold.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-bold.ttf"; sourceTree = SOURCE_ROOT; };
 		105734BB0673C36D02273D02 /* juce_midi_ci */ /* juce_midi_ci */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_midi_ci; path = ../../../../../JUCE/modules/juce_midi_ci; sourceTree = SOURCE_ROOT; };
 		134CFDC68E2987AE88219CEE /* CoreAudioKit.framework */ /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 		15CB6282CC12D1680BC22817 /* FaustPluginProcessor.cpp */ /* FaustPluginProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FaustPluginProcessor.cpp; path = ../../FaustPluginProcessor.cpp; sourceTree = SOURCE_ROOT; };
+		17B0ED4B1509DB43828BE96A /* Akzidenz-grotesk-be-bold-italic.ttf */ /* Akzidenz-grotesk-be-bold-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Akzidenz-grotesk-be-bold-italic.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Akzidenz-grotesk-be-bold-italic.ttf"; sourceTree = SOURCE_ROOT; };
 		1D325BD0C850AE9C5F467438 /* MetalKit.framework */ /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		1E00BF58DEA66C2B487CE8AE /* include_juce_box2d.cpp */ /* include_juce_box2d.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_box2d.cpp; path = ../../JuceLibraryCode/include_juce_box2d.cpp; sourceTree = SOURCE_ROOT; };
 		228B191FEA97B7A1E43BA88D /* include_juce_gui_basics.mm */ /* include_juce_gui_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_basics.mm; path = ../../JuceLibraryCode/include_juce_gui_basics.mm; sourceTree = SOURCE_ROOT; };
 		24464ABF2D53601395032996 /* include_juce_audio_devices.mm */ /* include_juce_audio_devices.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_devices.mm; path = ../../JuceLibraryCode/include_juce_audio_devices.mm; sourceTree = SOURCE_ROOT; };
 		2835579B3C911E3551E01F16 /* Cocoa.framework */ /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		28F145A39FB2B8B5AB90DBAD /* juce_audio_processors */ /* juce_audio_processors */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_processors; path = ../../../../../JUCE/modules/juce_audio_processors; sourceTree = SOURCE_ROOT; };
+		2A382B9F27BE92E92993083E /* Berthold-akzidenz-grotesk-be-medium.ttf */ /* Berthold-akzidenz-grotesk-be-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-medium.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-medium.ttf"; sourceTree = SOURCE_ROOT; };
 		2BA521195DD7816D148FA966 /* RecentFilesMenuTemplate.nib */ /* RecentFilesMenuTemplate.nib */ = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = SOURCE_ROOT; };
 		2BDE86EA6E8F2E9F443B88C1 /* Foundation.framework */ /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2CAFA6087AA97632410CFA63 /* BinaryData.h */ /* BinaryData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BinaryData.h; path = ../../JuceLibraryCode/BinaryData.h; sourceTree = SOURCE_ROOT; };
+		2D5E9B1B336FB85BACF1016D /* OPTICrawModern-Bold.otf */ /* OPTICrawModern-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = "OPTICrawModern-Bold.otf"; path = "../../../../../../Desktop/Design/Fonts/craw-modern/OPTICrawModern-Bold.otf"; sourceTree = SOURCE_ROOT; };
+		2F1A1AFF46C80DB08F1C6DAF /* Akzidenz-grotesk-be-bold-extended-italic.ttf */ /* Akzidenz-grotesk-be-bold-extended-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Akzidenz-grotesk-be-bold-extended-italic.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Akzidenz-grotesk-be-bold-extended-italic.ttf"; sourceTree = SOURCE_ROOT; };
+		32633886A62CBEFA3D8B7F5B /* Clarendon Regular.otf */ /* Clarendon Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = "Clarendon Regular.otf"; path = "../../../../../../Desktop/Design/Fonts/Clarendon Regular.otf"; sourceTree = SOURCE_ROOT; };
+		329E634C285CED8EBB4E9639 /* Berthold-akzidenz-grotesk-be-regular.ttf */ /* Berthold-akzidenz-grotesk-be-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-regular.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-regular.ttf"; sourceTree = SOURCE_ROOT; };
+		368B714A940CD2EA584B4B22 /* Amelia.ttf */ /* Amelia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = Amelia.ttf; path = "../../../../../../Developer/GUI inspiration/Amelia/Amelia.ttf"; sourceTree = SOURCE_ROOT; };
+		379C737564D66B4FB7C2E384 /* Berthold-akzidenz-grotesk-be-medium-condensed.ttf */ /* Berthold-akzidenz-grotesk-be-medium-condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-medium-condensed.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-medium-condensed.ttf"; sourceTree = SOURCE_ROOT; };
 		39E11FF27ED7C442134AADA5 /* AppConfig.h */ /* AppConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppConfig.h; path = ../../JuceLibraryCode/AppConfig.h; sourceTree = SOURCE_ROOT; };
+		3ABAE360A76601C40987D0FA /* BinaryData.cpp */ /* BinaryData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = SOURCE_ROOT; };
 		3FFACF688A5077004BE0D184 /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = ../../../../../JUCE/modules/juce_core; sourceTree = SOURCE_ROOT; };
 		41687A74C268DD7ECA60B71D /* include_juce_product_unlocking.mm */ /* include_juce_product_unlocking.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_product_unlocking.mm; path = ../../JuceLibraryCode/include_juce_product_unlocking.mm; sourceTree = SOURCE_ROOT; };
 		43B3DAA6C812572B4E616349 /* include_juce_events.mm */ /* include_juce_events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_events.mm; path = ../../JuceLibraryCode/include_juce_events.mm; sourceTree = SOURCE_ROOT; };
+		43EEB010B07EE57BEAF894AB /* ffonts.net.txt */ /* ffonts.net.txt */ = {isa = PBXFileReference; lastKnownFileType = text.txt; name = ffonts.net.txt; path = "../../../../../../Developer/GUI inspiration/Amelia/ffonts.net.txt"; sourceTree = SOURCE_ROOT; };
 		47EC0731CB66729723F0BF7F /* juce_gui_extra */ /* juce_gui_extra */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_extra; path = ../../../../../JUCE/modules/juce_gui_extra; sourceTree = SOURCE_ROOT; };
 		49ED8E8BF9C5028552E10AAB /* Info-VST3.plist */ /* Info-VST3.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-VST3.plist"; path = "Info-VST3.plist"; sourceTree = SOURCE_ROOT; };
 		4ADA6BC67449177F58E4B99B /* OpenGL.framework */ /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		4E3D977B5681972445D15B2B /* include_juce_audio_plugin_client_Standalone.cpp */ /* include_juce_audio_plugin_client_Standalone.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_Standalone.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_Standalone.cpp; sourceTree = SOURCE_ROOT; };
+		502F7E57C80243FA2AE68899 /* Berthold-akzidenz-grotesk-be-extra-bold.ttf */ /* Berthold-akzidenz-grotesk-be-extra-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-extra-bold.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-extra-bold.ttf"; sourceTree = SOURCE_ROOT; };
+		5230072978A2A7FD02846645 /* Embrionic55Swash.otf */ /* Embrionic55Swash.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = Embrionic55Swash.otf; path = ../../../../../../Desktop/Design/Fonts/embrionic/Embrionic55Swash.otf; sourceTree = SOURCE_ROOT; };
 		52421A9A9CE749F49D442733 /* juce_audio_devices */ /* juce_audio_devices */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_devices; path = ../../../../../JUCE/modules/juce_audio_devices; sourceTree = SOURCE_ROOT; };
 		535A45578062BAC9D487D8C6 /* IOKit.framework */ /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		5429B24BF47229B5DF7131A9 /* juce_audio_utils */ /* juce_audio_utils */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_utils; path = ../../../../../JUCE/modules/juce_audio_utils; sourceTree = SOURCE_ROOT; };
 		5799C7A77B13E311801289ED /* Metal.framework */ /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		5C5D969F1341AD571180BF20 /* include_juce_audio_processors_ara.cpp */ /* include_juce_audio_processors_ara.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_processors_ara.cpp; path = ../../JuceLibraryCode/include_juce_audio_processors_ara.cpp; sourceTree = SOURCE_ROOT; };
+		5D9B72CB41B599B7FF9C697F /* berthold-akzidenz-grotesk-be-9.zip */ /* berthold-akzidenz-grotesk-be-9.zip */ = {isa = PBXFileReference; lastKnownFileType = file.zip; name = "berthold-akzidenz-grotesk-be-9.zip"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9.zip"; sourceTree = SOURCE_ROOT; };
 		5EB728C647F710D5C988D427 /* include_juce_opengl.mm */ /* include_juce_opengl.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_opengl.mm; path = ../../JuceLibraryCode/include_juce_opengl.mm; sourceTree = SOURCE_ROOT; };
+		5F3E3FF02C56A0C6421997F4 /* clarendon.zip */ /* clarendon.zip */ = {isa = PBXFileReference; lastKnownFileType = file.zip; name = clarendon.zip; path = ../../../../../../Desktop/Design/Fonts/clarendon.zip; sourceTree = SOURCE_ROOT; };
+		60051F5E3ED4AE8A5DE3BFDD /* Optima Medium.ttf */ /* Optima Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Optima Medium.ttf"; path = "../../../../../../Developer/GUI inspiration/optima/Optima Medium.ttf"; sourceTree = SOURCE_ROOT; };
 		60175178D5095381D18B0203 /* VST3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = panadero.vst3; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E1018EF343A684280480E1 /* ffonts.net.htm */ /* ffonts.net.htm */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ffonts.net.htm; path = "../../../../../../Developer/GUI inspiration/Amelia/ffonts.net.htm"; sourceTree = SOURCE_ROOT; };
+		667EB30DA8E45C1EE8357A10 /* OPTIOnyx.otf */ /* OPTIOnyx.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = OPTIOnyx.otf; path = ../../../../../../Desktop/Design/Fonts/OPTIOnyx.otf; sourceTree = SOURCE_ROOT; };
 		66DB2489E5D789D658D4E2C0 /* DiscRecording.framework */ /* DiscRecording.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiscRecording.framework; path = System/Library/Frameworks/DiscRecording.framework; sourceTree = SDKROOT; };
 		66E4E596DB2AD361EAB2ABE0 /* include_juce_audio_processors.mm */ /* include_juce_audio_processors.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_processors.mm; path = ../../JuceLibraryCode/include_juce_audio_processors.mm; sourceTree = SOURCE_ROOT; };
+		6781EC2C21D7F1CA7CC5716A /* verthold-akzidenz-grotesk-be-italic.ttf */ /* verthold-akzidenz-grotesk-be-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "verthold-akzidenz-grotesk-be-italic.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/verthold-akzidenz-grotesk-be-italic.ttf"; sourceTree = SOURCE_ROOT; };
+		6947A391C3078B55168323E6 /* readme.html */ /* readme.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = readme.html; path = "../../../../../../Desktop/Design/Fonts/Motter Ombra Normal/readme.html"; sourceTree = SOURCE_ROOT; };
+		6BD64E2C4F79BF804610F391 /* Berthold-akzidenz-grotesk-be-medium-extended.ttf */ /* Berthold-akzidenz-grotesk-be-medium-extended.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-medium-extended.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-medium-extended.ttf"; sourceTree = SOURCE_ROOT; };
 		6C346CBC51CE6A94D2A75B4B /* QuartzCore.framework */ /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6EAEDF5172EE07AC8081B8D6 /* include_juce_audio_plugin_client_VST3.mm */ /* include_juce_audio_plugin_client_VST3.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_VST3.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.mm; sourceTree = SOURCE_ROOT; };
+		6ED49466599BF9AB21A1FC12 /* Berthold-akzidenz-grotesk-be-condensed.ttf */ /* Berthold-akzidenz-grotesk-be-condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-condensed.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-condensed.ttf"; sourceTree = SOURCE_ROOT; };
 		7015E5D53BA7AD2454B21B49 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = ../../../../../JUCE/modules/juce_graphics; sourceTree = SOURCE_ROOT; };
 		73D8D353D53A6AF4F7D54F2F /* juce_audio_formats */ /* juce_audio_formats */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_formats; path = ../../../../../JUCE/modules/juce_audio_formats; sourceTree = SOURCE_ROOT; };
 		7900AC285725B6E397FE50C4 /* juce_product_unlocking */ /* juce_product_unlocking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_product_unlocking; path = ../../../../../JUCE/modules/juce_product_unlocking; sourceTree = SOURCE_ROOT; };
@@ -142,34 +167,52 @@
 		7A9F3176FF6E363BF86AF527 /* juce_box2d */ /* juce_box2d */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_box2d; path = ../../../../../JUCE/modules/juce_box2d; sourceTree = SOURCE_ROOT; };
 		7AB7A50BEC52BDED35F39B06 /* juce_osc */ /* juce_osc */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_osc; path = ../../../../../JUCE/modules/juce_osc; sourceTree = SOURCE_ROOT; };
 		7C07ED8F3EAB2E57DA8DA965 /* Info-Standalone_Plugin.plist */ /* Info-Standalone_Plugin.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Standalone_Plugin.plist"; path = "Info-Standalone_Plugin.plist"; sourceTree = SOURCE_ROOT; };
+		7CC88CE96E9D10194F8DFBF6 /* Berthold-akzidenz-grotesk-be-extra-bold-condensed-italic.ttf */ /* Berthold-akzidenz-grotesk-be-extra-bold-condensed-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-extra-bold-condensed-italic.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-extra-bold-condensed-italic.ttf"; sourceTree = SOURCE_ROOT; };
+		7F71CD80DDA29A7E3D511450 /* Baby Teeth.ttf */ /* Baby Teeth.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Baby Teeth.ttf"; path = "../../../../../../Desktop/Design/Fonts/Baby Teeth.ttf"; sourceTree = SOURCE_ROOT; };
 		809F080DAA1D567D13AD5437 /* juce_video */ /* juce_video */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_video; path = ../../../../../JUCE/modules/juce_video; sourceTree = SOURCE_ROOT; };
 		82E8D33761875D124F19585B /* include_juce_graphics.mm */ /* include_juce_graphics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_graphics.mm; path = ../../JuceLibraryCode/include_juce_graphics.mm; sourceTree = SOURCE_ROOT; };
 		85E490FE79AB482D026795F1 /* include_juce_dsp.mm */ /* include_juce_dsp.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_dsp.mm; path = ../../JuceLibraryCode/include_juce_dsp.mm; sourceTree = SOURCE_ROOT; };
 		86F9830CA727D88D5659BDDA /* CoreAudio.framework */ /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		8868D5D1B5D8CA08D74DB40F /* AU */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = panadero.component; sourceTree = BUILT_PRODUCTS_DIR; };
 		88D9E25CD2D7847382002030 /* juce_audio_plugin_client */ /* juce_audio_plugin_client */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_plugin_client; path = ../../../../../JUCE/modules/juce_audio_plugin_client; sourceTree = SOURCE_ROOT; };
+		8BBE37D6414C87289E77ADD5 /* Berthold-akzidenz-grotesk-be-light-condensed.ttf */ /* Berthold-akzidenz-grotesk-be-light-condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-light-condensed.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-light-condensed.ttf"; sourceTree = SOURCE_ROOT; };
 		8D5394E615132832D595F6F5 /* include_juce_video.mm */ /* include_juce_video.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_video.mm; path = ../../JuceLibraryCode/include_juce_video.mm; sourceTree = SOURCE_ROOT; };
 		8ED0120AFA6F5EEC5EFD8022 /* Info-VST3_Manifest_Helper.plist */ /* Info-VST3_Manifest_Helper.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-VST3_Manifest_Helper.plist"; path = "Info-VST3_Manifest_Helper.plist"; sourceTree = SOURCE_ROOT; };
 		8FBFA002ADC8C8B06F7AA049 /* include_juce_audio_plugin_client_AUv3.mm */ /* include_juce_audio_plugin_client_AUv3.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_AUv3.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AUv3.mm; sourceTree = SOURCE_ROOT; };
 		909052CB66D2D7539111E61C /* juce_audio_basics */ /* juce_audio_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_basics; path = ../../../../../JUCE/modules/juce_audio_basics; sourceTree = SOURCE_ROOT; };
+		90A6FFFDF99EE95104047F22 /* Akzidenz-grotesk-be-bold-condensed.ttf */ /* Akzidenz-grotesk-be-bold-condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Akzidenz-grotesk-be-bold-condensed.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Akzidenz-grotesk-be-bold-condensed.ttf"; sourceTree = SOURCE_ROOT; };
 		913D80E8FFB314DBC4014F30 /* CoreMIDI.framework */ /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		98294727586AE114898919C0 /* AUv3 AppExtension */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = panadero.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A04FFA53DC15E6EBB721334 /* OPTICrawModern.otf */ /* OPTICrawModern.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = OPTICrawModern.otf; path = "../../../../../../Desktop/Design/Fonts/craw-modern/OPTICrawModern.otf"; sourceTree = SOURCE_ROOT; };
 		9BF99D41BFBF2658A89DAA66 /* juce_gui_basics */ /* juce_gui_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_gui_basics; path = ../../../../../JUCE/modules/juce_gui_basics; sourceTree = SOURCE_ROOT; };
+		9E13025F2BCF0C034D1536EC /* Berthold-akzidenz-grotesk-be-super.ttf */ /* Berthold-akzidenz-grotesk-be-super.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-super.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-super.ttf"; sourceTree = SOURCE_ROOT; };
 		9E7713B4175BB84155C84B66 /* Info-AUv3_AppExtension.plist */ /* Info-AUv3_AppExtension.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-AUv3_AppExtension.plist"; path = "Info-AUv3_AppExtension.plist"; sourceTree = SOURCE_ROOT; };
+		9EBC1A689B882B3EA7D1B4ED /* Berthold-akzidenz-grotesk-be-medium-condensed-italic.ttf */ /* Berthold-akzidenz-grotesk-be-medium-condensed-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-medium-condensed-italic.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-medium-condensed-italic.ttf"; sourceTree = SOURCE_ROOT; };
+		9F67326490C39F50A4907DDF /* Optima_Italic.ttf */ /* Optima_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = Optima_Italic.ttf; path = "../../../../../../Developer/GUI inspiration/optima/Optima_Italic.ttf"; sourceTree = SOURCE_ROOT; };
 		A207F04D52C4743964979D4F /* include_juce_audio_plugin_client_AU_1.mm */ /* include_juce_audio_plugin_client_AU_1.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_AU_1.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AU_1.mm; sourceTree = SOURCE_ROOT; };
+		A7E738FAE5AEEAEC65EB4408 /* OPTIMA_B.TTF */ /* OPTIMA_B.TTF */ = {isa = PBXFileReference; lastKnownFileType = file.TTF; name = OPTIMA_B.TTF; path = "../../../../../../Developer/GUI inspiration/optima/OPTIMA_B.TTF"; sourceTree = SOURCE_ROOT; };
 		A7FEDC4B15DC174FDDD402FD /* AVFoundation.framework */ /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A808D7FEFB1D60FE30E158F8 /* Accelerate.framework */ /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A9C162FB96AE963BA2124819 /* Berthold-akzidenz-grotesk-be-medium-italic.ttf */ /* Berthold-akzidenz-grotesk-be-medium-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-medium-italic.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-medium-italic.ttf"; sourceTree = SOURCE_ROOT; };
+		AA2F16E29248279C327A6634 /* onyx.zip */ /* onyx.zip */ = {isa = PBXFileReference; lastKnownFileType = file.zip; name = onyx.zip; path = ../../../../../../Desktop/Design/Fonts/onyx.zip; sourceTree = SOURCE_ROOT; };
 		AB36E1B8E9949D31772DA69F /* include_juce_analytics.cpp */ /* include_juce_analytics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_analytics.cpp; path = ../../JuceLibraryCode/include_juce_analytics.cpp; sourceTree = SOURCE_ROOT; };
 		AB6FCA424867D66C1CDDC56B /* AUv3_AppExtension.entitlements */ /* AUv3_AppExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AUv3_AppExtension.entitlements; path = AUv3_AppExtension.entitlements; sourceTree = SOURCE_ROOT; };
+		ADE0284517042E8E8EFCC4C7 /* OPTIMA.TTF */ /* OPTIMA.TTF */ = {isa = PBXFileReference; lastKnownFileType = file.TTF; name = OPTIMA.TTF; path = "../../../../../../Developer/GUI inspiration/optima/OPTIMA.TTF"; sourceTree = SOURCE_ROOT; };
 		AE3B10A3CD7A7A58DCDBA974 /* CoreMedia.framework */ /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		AE62B572BDEEE80CC5733D54 /* include_juce_core.mm */ /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
 		B1AB9BE311B799D214BE1274 /* WebKit.framework */ /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B2018A0A37A0AA768C73CF70 /* include_juce_midi_ci.cpp */ /* include_juce_midi_ci.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_midi_ci.cpp; path = ../../JuceLibraryCode/include_juce_midi_ci.cpp; sourceTree = SOURCE_ROOT; };
 		B2C3AEE63980751A4F2450FB /* Info-AU.plist */ /* Info-AU.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-AU.plist"; path = "Info-AU.plist"; sourceTree = SOURCE_ROOT; };
+		B31BCABF4DFCCE3CEEBBCE8C /* Akzidenz-grotesk-be-bold-extended.ttf */ /* Akzidenz-grotesk-be-bold-extended.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Akzidenz-grotesk-be-bold-extended.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Akzidenz-grotesk-be-bold-extended.ttf"; sourceTree = SOURCE_ROOT; };
+		B4FB5E3BDC96351761917742 /* Olympik Regular.ttf */ /* Olympik Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Olympik Regular.ttf"; path = "../../../../../../Developer/GUI inspiration/Olympik Regular.ttf"; sourceTree = SOURCE_ROOT; };
 		B59276E7DB7E203870503BDD /* AudioUnit.framework */ /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		B6451EF899DFB0C1D8E862FA /* Berthold-akzidenz-grotesk-be-light.ttf */ /* Berthold-akzidenz-grotesk-be-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-light.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-light.ttf"; sourceTree = SOURCE_ROOT; };
 		B86C0504316C79EA24A191E0 /* juce_animation */ /* juce_animation */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_animation; path = ../../../../../JUCE/modules/juce_animation; sourceTree = SOURCE_ROOT; };
 		B8ED5A0784BCAD741B824D7C /* include_juce_core_CompilationTime.cpp */ /* include_juce_core_CompilationTime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_core_CompilationTime.cpp; path = ../../JuceLibraryCode/include_juce_core_CompilationTime.cpp; sourceTree = SOURCE_ROOT; };
+		BD9C028A820DC52F24C1B18A /* Embrionic85.otf */ /* Embrionic85.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = Embrionic85.otf; path = ../../../../../../Desktop/Design/Fonts/embrionic/Embrionic85.otf; sourceTree = SOURCE_ROOT; };
 		BDC8A48AC9E79771AA18BAB5 /* AVKit.framework */ /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		BFAC89CCF87CF1965FC8EB83 /* Berthold-akzidenz-grotesk-be-extended.ttf */ /* Berthold-akzidenz-grotesk-be-extended.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-extended.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-extended.ttf"; sourceTree = SOURCE_ROOT; };
+		C1565868CB7C88C4D093350A /* Embrionic85Swash.otf */ /* Embrionic85Swash.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = Embrionic85Swash.otf; path = ../../../../../../Desktop/Design/Fonts/embrionic/Embrionic85Swash.otf; sourceTree = SOURCE_ROOT; };
 		C4714DABF67F8788A538E8A3 /* include_juce_animation.cpp */ /* include_juce_animation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_animation.cpp; path = ../../JuceLibraryCode/include_juce_animation.cpp; sourceTree = SOURCE_ROOT; };
 		C83416D04653E5F572ECBE47 /* AudioToolbox.framework */ /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CC402C9D74C0BEFD3B675EC4 /* juce_cryptography */ /* juce_cryptography */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_cryptography; path = ../../../../../JUCE/modules/juce_cryptography; sourceTree = SOURCE_ROOT; };
@@ -177,12 +220,18 @@
 		D296E9B5C815B74366DCDAE3 /* juce_opengl */ /* juce_opengl */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_opengl; path = ../../../../../JUCE/modules/juce_opengl; sourceTree = SOURCE_ROOT; };
 		D299B2FBE3B1C64CCEED0481 /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = ../../../../../JUCE/modules/juce_data_structures; sourceTree = SOURCE_ROOT; };
 		D5DE353F823F0FD60807453B /* include_juce_osc.cpp */ /* include_juce_osc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_osc.cpp; path = ../../JuceLibraryCode/include_juce_osc.cpp; sourceTree = SOURCE_ROOT; };
+		D6E409EC10ACCDDE8BB159AB /* Berthold-akzidenz-grotesk-be-light-extended.ttf */ /* Berthold-akzidenz-grotesk-be-light-extended.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-light-extended.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-light-extended.ttf"; sourceTree = SOURCE_ROOT; };
+		D915819BC29FA3FD5F980CA4 /* quick_tips.html */ /* quick_tips.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = quick_tips.html; path = "../../../../../../Developer/GUI inspiration/Amelia/quick_tips.html"; sourceTree = SOURCE_ROOT; };
 		DE14F4F7B439B2B339FDF1AC /* VST3 Manifest Helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = juce_vst3_helper; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF34E0B5C3BB9C7D9C7D197 /* include_juce_audio_plugin_client_ARA.cpp */ /* include_juce_audio_plugin_client_ARA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_ARA.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_ARA.cpp; sourceTree = SOURCE_ROOT; };
 		E05469D5BA9D45A8B9A4E096 /* include_juce_audio_utils.mm */ /* include_juce_audio_utils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_utils.mm; path = ../../JuceLibraryCode/include_juce_audio_utils.mm; sourceTree = SOURCE_ROOT; };
+		E095A7BD302473939AF7EA65 /* install-a-new-font.txt */ /* install-a-new-font.txt */ = {isa = PBXFileReference; lastKnownFileType = text.txt; name = "install-a-new-font.txt"; path = "../../../../../../Developer/GUI inspiration/Amelia/install-a-new-font.txt"; sourceTree = SOURCE_ROOT; };
 		E21A3FC3142B556114B8DB75 /* include_juce_graphics_Harfbuzz.cpp */ /* include_juce_graphics_Harfbuzz.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_graphics_Harfbuzz.cpp; path = ../../JuceLibraryCode/include_juce_graphics_Harfbuzz.cpp; sourceTree = SOURCE_ROOT; };
 		E4B6CA02C0AD53DEB1776A48 /* include_juce_audio_formats.mm */ /* include_juce_audio_formats.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_formats.mm; path = ../../JuceLibraryCode/include_juce_audio_formats.mm; sourceTree = SOURCE_ROOT; };
+		E5834B11206FECE2D1006A8A /* Neil Bold.otf */ /* Neil Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file.otf; name = "Neil Bold.otf"; path = "../../../../../../Desktop/Design/Fonts/Neil Bold.otf"; sourceTree = SOURCE_ROOT; };
+		E8F1F88C0AA56598910C8E41 /* craw-modern.zip */ /* craw-modern.zip */ = {isa = PBXFileReference; lastKnownFileType = file.zip; name = "craw-modern.zip"; path = "../../../../../../Desktop/Design/Fonts/craw-modern.zip"; sourceTree = SOURCE_ROOT; };
 		EA61B74F8D3B0E3A45A95181 /* juce_analytics */ /* juce_analytics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_analytics; path = ../../../../../JUCE/modules/juce_analytics; sourceTree = SOURCE_ROOT; };
+		EAB537A44D5D8C0266605A11 /* Berthold-akzidenz-grotesk-be-extra-bold-condensed.ttf */ /* Berthold-akzidenz-grotesk-be-extra-bold-condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; name = "Berthold-akzidenz-grotesk-be-extra-bold-condensed.ttf"; path = "../../../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-extra-bold-condensed.ttf"; sourceTree = SOURCE_ROOT; };
 		EC2634F1780BB3F118292CF4 /* include_juce_audio_plugin_client_AU_2.mm */ /* include_juce_audio_plugin_client_AU_2.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_AU_2.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AU_2.mm; sourceTree = SOURCE_ROOT; };
 		EF4776D962BD72D2A5F2CA87 /* juce_events */ /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = ../../../../../JUCE/modules/juce_events; sourceTree = SOURCE_ROOT; };
 		F148E1C8BBBE1C3A7C733BCB /* JucePluginDefines.h */ /* JucePluginDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JucePluginDefines.h; path = ../../JuceLibraryCode/JucePluginDefines.h; sourceTree = SOURCE_ROOT; };
@@ -325,6 +374,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		019C6E3130DEA37BEF2A18A9 /* optima */ = {
+			isa = PBXGroup;
+			children = (
+				60051F5E3ED4AE8A5DE3BFDD,
+				ADE0284517042E8E8EFCC4C7,
+				A7E738FAE5AEEAEC65EB4408,
+				9F67326490C39F50A4907DDF,
+			);
+			name = optima;
+			sourceTree = "<group>";
+		};
 		21F141433A8890BC309EECF9 /* JUCE Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +414,15 @@
 			name = "JUCE Modules";
 			sourceTree = "<group>";
 		};
+		2809BE226790645FE18ADA1A /* craw-modern */ = {
+			isa = PBXGroup;
+			children = (
+				2D5E9B1B336FB85BACF1016D,
+				9A04FFA53DC15E6EBB721334,
+			);
+			name = "craw-modern";
+			sourceTree = "<group>";
+		};
 		311DAC571D614805F8556C9E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +434,65 @@
 				DE14F4F7B439B2B339FDF1AC,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		46149EEB99E9AC9BAD6821F2 /* Amelia */ = {
+			isa = PBXGroup;
+			children = (
+				368B714A940CD2EA584B4B22,
+				63E1018EF343A684280480E1,
+				43EEB010B07EE57BEAF894AB,
+				E095A7BD302473939AF7EA65,
+				D915819BC29FA3FD5F980CA4,
+			);
+			name = Amelia;
+			sourceTree = "<group>";
+		};
+		608EF5FF70228011C3F1D4BE /* berthold-akzidenz-grotesk-be-9 */ = {
+			isa = PBXGroup;
+			children = (
+				90A6FFFDF99EE95104047F22,
+				2F1A1AFF46C80DB08F1C6DAF,
+				B31BCABF4DFCCE3CEEBBCE8C,
+				17B0ED4B1509DB43828BE96A,
+				0FB4FF653B582DF52D4E4885,
+				6ED49466599BF9AB21A1FC12,
+				BFAC89CCF87CF1965FC8EB83,
+				7CC88CE96E9D10194F8DFBF6,
+				EAB537A44D5D8C0266605A11,
+				502F7E57C80243FA2AE68899,
+				8BBE37D6414C87289E77ADD5,
+				D6E409EC10ACCDDE8BB159AB,
+				B6451EF899DFB0C1D8E862FA,
+				9EBC1A689B882B3EA7D1B4ED,
+				379C737564D66B4FB7C2E384,
+				6BD64E2C4F79BF804610F391,
+				A9C162FB96AE963BA2124819,
+				2A382B9F27BE92E92993083E,
+				329E634C285CED8EBB4E9639,
+				9E13025F2BCF0C034D1536EC,
+				6781EC2C21D7F1CA7CC5716A,
+			);
+			name = "berthold-akzidenz-grotesk-be-9";
+			sourceTree = "<group>";
+		};
+		8E11CE3FF1E2E9C82BC1EBB5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				608EF5FF70228011C3F1D4BE,
+				2809BE226790645FE18ADA1A,
+				B9944D5A89B6D11193DF6B3D,
+				BD2E1344CFD227FFDAFE0AA2,
+				7F71CD80DDA29A7E3D511450,
+				5D9B72CB41B599B7FF9C697F,
+				32633886A62CBEFA3D8B7F5B,
+				5F3E3FF02C56A0C6421997F4,
+				E8F1F88C0AA56598910C8E41,
+				E5834B11206FECE2D1006A8A,
+				AA2F16E29248279C327A6634,
+				667EB30DA8E45C1EE8357A10,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		9E0401CDF4794D8472D08D10 /* Resources */ = {
@@ -406,6 +534,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B9944D5A89B6D11193DF6B3D /* embrionic */ = {
+			isa = PBXGroup;
+			children = (
+				5230072978A2A7FD02846645,
+				BD9C028A820DC52F24C1B18A,
+				C1565868CB7C88C4D093350A,
+			);
+			name = embrionic;
+			sourceTree = "<group>";
+		};
+		BD2E1344CFD227FFDAFE0AA2 /* Motter Ombra Normal */ = {
+			isa = PBXGroup;
+			children = (
+				0E524A451CD9AECDF60369C3,
+				6947A391C3078B55168323E6,
+			);
+			name = "Motter Ombra Normal";
+			sourceTree = "<group>";
+		};
 		C9000A1A3560130A74908685 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,7 +577,11 @@
 		E5BFDB549C4138C2C43F64B8 /* panadero */ = {
 			isa = PBXGroup;
 			children = (
+				46149EEB99E9AC9BAD6821F2,
+				8E11CE3FF1E2E9C82BC1EBB5,
+				019C6E3130DEA37BEF2A18A9,
 				C9000A1A3560130A74908685,
+				B4FB5E3BDC96351761917742,
 			);
 			name = panadero;
 			sourceTree = "<group>";
@@ -439,6 +590,8 @@
 			isa = PBXGroup;
 			children = (
 				39E11FF27ED7C442134AADA5,
+				3ABAE360A76601C40987D0FA,
+				2CAFA6087AA97632410CFA63,
 				AB36E1B8E9949D31772DA69F,
 				C4714DABF67F8788A538E8A3,
 				F8881A8F9802A491C2D7D752,
@@ -862,6 +1015,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19CFA3445C4A1AD4520DB26,
+				067031D66100B8CC9F3D3856,
 				0B00FD42FFA2B58651A16A7F,
 				A7FFD10F4392EDBD4594F0F4,
 				D9FE958C37795D89F855BC5E,

@@ -40,7 +40,7 @@ Compilation options: -a /usr/local/share/faust/juce/juce-plugin.cpp -lang cpp -i
         #define LIBFAUST_API __declspec(dllexport)
     #else
         #define FAUST_API
-        #define LIBFAUST_API 
+        #define LIBFAUST_API
     #endif
 #else
     #ifdef FAUST_EXE
@@ -473,7 +473,7 @@ class FAUST_API MapUI : public UI, public PathBuilder
             return 0;
         }
     
-        // map access 
+        // map access
         std::map<std::string, FAUSTFLOAT*>& getFullpathMap() { return fPathZoneMap; }
         std::map<std::string, FAUSTFLOAT*>& getShortnameMap() { return fShortnameZoneMap; }
         std::map<std::string, FAUSTFLOAT*>& getLabelMap() { return fLabelZoneMap; }
@@ -2153,8 +2153,8 @@ class FAUST_API DownConverter : public UpdatableValueConverter {
 
     private:
 
-        Interpolator3pt	fA2F;
-        Interpolator3pt	fF2A;
+        Interpolator3pt    fA2F;
+        Interpolator3pt    fF2A;
 
     public:
 
@@ -2187,14 +2187,14 @@ class FAUST_API UpDownConverter : public UpdatableValueConverter {
 
     private:
 
-        Interpolator3pt	fA2F;
+        Interpolator3pt    fA2F;
         Interpolator fF2A;
 
     public:
 
         UpDownConverter(double amin, double amid, double amax, double fmin, double fmid, double fmax) :
             fA2F(amin,amid,amax,fmin,fmax,fmin),
-            fF2A(fmin,fmax,amin,amax)				// Special, pseudo inverse of a non monotonic function
+            fF2A(fmin,fmax,amin,amax)                // Special, pseudo inverse of a non monotonic function
         {}
 
         virtual double ui2faust(double x) { return fA2F(x); }
@@ -2221,14 +2221,14 @@ class FAUST_API DownUpConverter : public UpdatableValueConverter {
 
     private:
 
-        Interpolator3pt	fA2F;
+        Interpolator3pt    fA2F;
         Interpolator fF2A;
 
     public:
 
         DownUpConverter(double amin, double amid, double amax, double fmin, double fmid, double fmax) :
             fA2F(amin,amid,amax,fmax,fmin,fmax),
-            fF2A(fmin,fmax,amin,amax)				// Special, pseudo inverse of a non monotonic function
+            fF2A(fmin,fmax,amin,amax)                // Special, pseudo inverse of a non monotonic function
         {}
 
         virtual double ui2faust(double x) { return fA2F(x); }
@@ -2254,7 +2254,7 @@ class FAUST_API ZoneControl {
 
     protected:
 
-        FAUSTFLOAT*	fZone;
+        FAUSTFLOAT*    fZone;
 
     public:
 
@@ -2613,7 +2613,7 @@ static bool parseDQString(const char*& p, std::string& s)
 // ---------------------------------------------------------------------
 //
 //                          IMPLEMENTATION
-// 
+//
 // ---------------------------------------------------------------------
 
 /**
@@ -2736,7 +2736,7 @@ static bool parseMetaData(const char*& p, std::map<std::string, std::string>& me
     const char* saved = p; // to restore position if we fail
     std::string metaKey, metaValue;
     if (parseChar(p, ':') && parseChar(p, '[')) {
-        do { 
+        do {
             if (parseChar(p, '{') && parseDQString(p, metaKey) && parseChar(p, ':') && parseDQString(p, metaValue) && parseChar(p, '}')) {
                 metadatas[metaKey] = metaValue;
             }
@@ -2753,7 +2753,7 @@ static bool parseItemMetaData(const char*& p, std::vector<std::pair<std::string,
     const char* saved = p; // to restore position if we fail
     std::string metaKey, metaValue;
     if (parseChar(p, ':') && parseChar(p, '[')) {
-        do { 
+        do {
             if (parseChar(p, '{') && parseDQString(p, metaKey) && parseChar(p, ':') && parseDQString(p, metaValue) && parseChar(p, '}')) {
                 metadatas.push_back(std::make_pair(metaKey, metaValue));
             }
@@ -2805,7 +2805,7 @@ static bool parseUI(const char*& p, std::vector<itemInfo>& uiItems, int& numItem
                     if (uiItems.size() != 0) {
                         numItems++;
                     }
-                    if (parseChar(p, ':') && parseDQString(p, value)) {   
+                    if (parseChar(p, ':') && parseDQString(p, value)) {
                         itemInfo item;
                         item.type = value;
                         uiItems.push_back(item);
@@ -3292,9 +3292,9 @@ typedef struct {
     char *buf;
     volatile size_t write_ptr;
     volatile size_t read_ptr;
-    size_t	size;
-    size_t	size_mask;
-    int	mlocked;
+    size_t    size;
+    size_t    size_mask;
+    int    mlocked;
 }
 ringbuffer_t;
 
@@ -3322,27 +3322,27 @@ static size_t ringbuffer_write_space(const ringbuffer_t *rb);
 static ringbuffer_t *
 ringbuffer_create (size_t sz)
 {
-	size_t power_of_two;
-	ringbuffer_t *rb;
+    size_t power_of_two;
+    ringbuffer_t *rb;
 
-	if ((rb = (ringbuffer_t *) malloc (sizeof (ringbuffer_t))) == NULL) {
-		return NULL;
-	}
+    if ((rb = (ringbuffer_t *) malloc (sizeof (ringbuffer_t))) == NULL) {
+        return NULL;
+    }
 
-	for (power_of_two = 1u; 1u << power_of_two < sz; power_of_two++);
+    for (power_of_two = 1u; 1u << power_of_two < sz; power_of_two++);
 
-	rb->size = 1u << power_of_two;
-	rb->size_mask = rb->size;
-	rb->size_mask -= 1;
-	rb->write_ptr = 0;
-	rb->read_ptr = 0;
-	if ((rb->buf = (char *) malloc (rb->size)) == NULL) {
-		free (rb);
-		return NULL;
-	}
-	rb->mlocked = 0;
+    rb->size = 1u << power_of_two;
+    rb->size_mask = rb->size;
+    rb->size_mask -= 1;
+    rb->write_ptr = 0;
+    rb->read_ptr = 0;
+    if ((rb->buf = (char *) malloc (rb->size)) == NULL) {
+        free (rb);
+        return NULL;
+    }
+    rb->mlocked = 0;
 
-	return rb;
+    return rb;
 }
 
 /* Free all data associated with the ringbuffer `rb'. */
@@ -3351,12 +3351,12 @@ static void
 ringbuffer_free (ringbuffer_t * rb)
 {
 #ifdef USE_MLOCK
-	if (rb->mlocked) {
-		munlock (rb->buf, rb->size);
-	}
+    if (rb->mlocked) {
+        munlock (rb->buf, rb->size);
+    }
 #endif /* USE_MLOCK */
-	free (rb->buf);
-	free (rb);
+    free (rb->buf);
+    free (rb);
 }
 
 /* Lock the data block of `rb' using the system call 'mlock'.  */
@@ -3365,12 +3365,12 @@ static int
 ringbuffer_mlock (ringbuffer_t * rb)
 {
 #ifdef USE_MLOCK
-	if (mlock (rb->buf, rb->size)) {
-		return -1;
-	}
+    if (mlock (rb->buf, rb->size)) {
+        return -1;
+    }
 #endif /* USE_MLOCK */
-	rb->mlocked = 1;
-	return 0;
+    rb->mlocked = 1;
+    return 0;
 }
 
 /* Reset the read and write pointers to zero. This is not thread
@@ -3379,8 +3379,8 @@ ringbuffer_mlock (ringbuffer_t * rb)
 static void
 ringbuffer_reset (ringbuffer_t * rb)
 {
-	rb->read_ptr = 0;
-	rb->write_ptr = 0;
+    rb->read_ptr = 0;
+    rb->write_ptr = 0;
     memset(rb->buf, 0, rb->size);
 }
 
@@ -3404,16 +3404,16 @@ ringbuffer_reset_size (ringbuffer_t * rb, size_t sz)
 static size_t
 ringbuffer_read_space (const ringbuffer_t * rb)
 {
-	size_t w, r;
+    size_t w, r;
 
-	w = rb->write_ptr;
-	r = rb->read_ptr;
+    w = rb->write_ptr;
+    r = rb->read_ptr;
 
-	if (w > r) {
-		return w - r;
-	} else {
-		return (w - r + rb->size) & rb->size_mask;
-	}
+    if (w > r) {
+        return w - r;
+    } else {
+        return (w - r + rb->size) & rb->size_mask;
+    }
 }
 
 /* Return the number of bytes available for writing. This is the
@@ -3423,18 +3423,18 @@ ringbuffer_read_space (const ringbuffer_t * rb)
 static size_t
 ringbuffer_write_space (const ringbuffer_t * rb)
 {
-	size_t w, r;
+    size_t w, r;
 
-	w = rb->write_ptr;
-	r = rb->read_ptr;
+    w = rb->write_ptr;
+    r = rb->read_ptr;
 
-	if (w > r) {
-		return ((r - w + rb->size) & rb->size_mask) - 1;
-	} else if (w < r) {
-		return (r - w) - 1;
-	} else {
-		return rb->size - 1;
-	}
+    if (w > r) {
+        return ((r - w + rb->size) & rb->size_mask) - 1;
+    } else if (w < r) {
+        return (r - w) - 1;
+    } else {
+        return rb->size - 1;
+    }
 }
 
 /* The copying data reader. Copy at most `cnt' bytes from `rb' to
@@ -3443,36 +3443,36 @@ ringbuffer_write_space (const ringbuffer_t * rb)
 static size_t
 ringbuffer_read (ringbuffer_t * rb, char *dest, size_t cnt)
 {
-	size_t free_cnt;
-	size_t cnt2;
-	size_t to_read;
-	size_t n1, n2;
+    size_t free_cnt;
+    size_t cnt2;
+    size_t to_read;
+    size_t n1, n2;
 
-	if ((free_cnt = ringbuffer_read_space (rb)) == 0) {
-		return 0;
-	}
+    if ((free_cnt = ringbuffer_read_space (rb)) == 0) {
+        return 0;
+    }
 
-	to_read = cnt > free_cnt ? free_cnt : cnt;
+    to_read = cnt > free_cnt ? free_cnt : cnt;
 
-	cnt2 = rb->read_ptr + to_read;
+    cnt2 = rb->read_ptr + to_read;
 
-	if (cnt2 > rb->size) {
-		n1 = rb->size - rb->read_ptr;
-		n2 = cnt2 & rb->size_mask;
-	} else {
-		n1 = to_read;
-		n2 = 0;
-	}
+    if (cnt2 > rb->size) {
+        n1 = rb->size - rb->read_ptr;
+        n2 = cnt2 & rb->size_mask;
+    } else {
+        n1 = to_read;
+        n2 = 0;
+    }
 
-	memcpy (dest, &(rb->buf[rb->read_ptr]), n1);
-	rb->read_ptr = (rb->read_ptr + n1) & rb->size_mask;
+    memcpy (dest, &(rb->buf[rb->read_ptr]), n1);
+    rb->read_ptr = (rb->read_ptr + n1) & rb->size_mask;
 
-	if (n2) {
-		memcpy (dest + n1, &(rb->buf[rb->read_ptr]), n2);
-		rb->read_ptr = (rb->read_ptr + n2) & rb->size_mask;
-	}
+    if (n2) {
+        memcpy (dest + n1, &(rb->buf[rb->read_ptr]), n2);
+        rb->read_ptr = (rb->read_ptr + n2) & rb->size_mask;
+    }
 
-	return to_read;
+    return to_read;
 }
 
 /* The copying data reader w/o read pointer advance. Copy at most
@@ -3482,38 +3482,38 @@ ringbuffer_read (ringbuffer_t * rb, char *dest, size_t cnt)
 static size_t
 ringbuffer_peek (ringbuffer_t * rb, char *dest, size_t cnt)
 {
-	size_t free_cnt;
-	size_t cnt2;
-	size_t to_read;
-	size_t n1, n2;
-	size_t tmp_read_ptr;
+    size_t free_cnt;
+    size_t cnt2;
+    size_t to_read;
+    size_t n1, n2;
+    size_t tmp_read_ptr;
 
-	tmp_read_ptr = rb->read_ptr;
+    tmp_read_ptr = rb->read_ptr;
 
-	if ((free_cnt = ringbuffer_read_space (rb)) == 0) {
-		return 0;
-	}
+    if ((free_cnt = ringbuffer_read_space (rb)) == 0) {
+        return 0;
+    }
 
-	to_read = cnt > free_cnt ? free_cnt : cnt;
+    to_read = cnt > free_cnt ? free_cnt : cnt;
 
-	cnt2 = tmp_read_ptr + to_read;
+    cnt2 = tmp_read_ptr + to_read;
 
-	if (cnt2 > rb->size) {
-		n1 = rb->size - tmp_read_ptr;
-		n2 = cnt2 & rb->size_mask;
-	} else {
-		n1 = to_read;
-		n2 = 0;
-	}
+    if (cnt2 > rb->size) {
+        n1 = rb->size - tmp_read_ptr;
+        n2 = cnt2 & rb->size_mask;
+    } else {
+        n1 = to_read;
+        n2 = 0;
+    }
 
-	memcpy (dest, &(rb->buf[tmp_read_ptr]), n1);
-	tmp_read_ptr = (tmp_read_ptr + n1) & rb->size_mask;
+    memcpy (dest, &(rb->buf[tmp_read_ptr]), n1);
+    tmp_read_ptr = (tmp_read_ptr + n1) & rb->size_mask;
 
-	if (n2) {
-		memcpy (dest + n1, &(rb->buf[tmp_read_ptr]), n2);
-	}
+    if (n2) {
+        memcpy (dest + n1, &(rb->buf[tmp_read_ptr]), n2);
+    }
 
-	return to_read;
+    return to_read;
 }
 
 /* The copying data writer. Copy at most `cnt' bytes to `rb' from
@@ -3522,36 +3522,36 @@ ringbuffer_peek (ringbuffer_t * rb, char *dest, size_t cnt)
 static size_t
 ringbuffer_write (ringbuffer_t * rb, const char *src, size_t cnt)
 {
-	size_t free_cnt;
-	size_t cnt2;
-	size_t to_write;
-	size_t n1, n2;
+    size_t free_cnt;
+    size_t cnt2;
+    size_t to_write;
+    size_t n1, n2;
 
-	if ((free_cnt = ringbuffer_write_space (rb)) == 0) {
-		return 0;
-	}
+    if ((free_cnt = ringbuffer_write_space (rb)) == 0) {
+        return 0;
+    }
 
-	to_write = cnt > free_cnt ? free_cnt : cnt;
+    to_write = cnt > free_cnt ? free_cnt : cnt;
 
-	cnt2 = rb->write_ptr + to_write;
+    cnt2 = rb->write_ptr + to_write;
 
-	if (cnt2 > rb->size) {
-		n1 = rb->size - rb->write_ptr;
-		n2 = cnt2 & rb->size_mask;
-	} else {
-		n1 = to_write;
-		n2 = 0;
-	}
+    if (cnt2 > rb->size) {
+        n1 = rb->size - rb->write_ptr;
+        n2 = cnt2 & rb->size_mask;
+    } else {
+        n1 = to_write;
+        n2 = 0;
+    }
 
-	memcpy (&(rb->buf[rb->write_ptr]), src, n1);
-	rb->write_ptr = (rb->write_ptr + n1) & rb->size_mask;
+    memcpy (&(rb->buf[rb->write_ptr]), src, n1);
+    rb->write_ptr = (rb->write_ptr + n1) & rb->size_mask;
 
-	if (n2) {
-		memcpy (&(rb->buf[rb->write_ptr]), src + n1, n2);
-		rb->write_ptr = (rb->write_ptr + n2) & rb->size_mask;
-	}
+    if (n2) {
+        memcpy (&(rb->buf[rb->write_ptr]), src + n1, n2);
+        rb->write_ptr = (rb->write_ptr + n2) & rb->size_mask;
+    }
 
-	return to_write;
+    return to_write;
 }
 
 /* Advance the read pointer `cnt' places. */
@@ -3559,8 +3559,8 @@ ringbuffer_write (ringbuffer_t * rb, const char *src, size_t cnt)
 static void
 ringbuffer_read_advance (ringbuffer_t * rb, size_t cnt)
 {
-	size_t tmp = (rb->read_ptr + cnt) & rb->size_mask;
-	rb->read_ptr = tmp;
+    size_t tmp = (rb->read_ptr + cnt) & rb->size_mask;
+    rb->read_ptr = tmp;
 }
 
 /* Advance the write pointer `cnt' places. */
@@ -3568,8 +3568,8 @@ ringbuffer_read_advance (ringbuffer_t * rb, size_t cnt)
 static void
 ringbuffer_write_advance (ringbuffer_t * rb, size_t cnt)
 {
-	size_t tmp = (rb->write_ptr + cnt) & rb->size_mask;
-	rb->write_ptr = tmp;
+    size_t tmp = (rb->write_ptr + cnt) & rb->size_mask;
+    rb->write_ptr = tmp;
 }
 
 /* The non-copying data reader. `vec' is an array of two places. Set
@@ -3579,41 +3579,41 @@ ringbuffer_write_advance (ringbuffer_t * rb, size_t cnt)
 
 static void
 ringbuffer_get_read_vector (const ringbuffer_t * rb,
-				 ringbuffer_data_t * vec)
+                 ringbuffer_data_t * vec)
 {
-	size_t free_cnt;
-	size_t cnt2;
-	size_t w, r;
+    size_t free_cnt;
+    size_t cnt2;
+    size_t w, r;
 
-	w = rb->write_ptr;
-	r = rb->read_ptr;
+    w = rb->write_ptr;
+    r = rb->read_ptr;
 
-	if (w > r) {
-		free_cnt = w - r;
-	} else {
-		free_cnt = (w - r + rb->size) & rb->size_mask;
-	}
+    if (w > r) {
+        free_cnt = w - r;
+    } else {
+        free_cnt = (w - r + rb->size) & rb->size_mask;
+    }
 
-	cnt2 = r + free_cnt;
+    cnt2 = r + free_cnt;
 
-	if (cnt2 > rb->size) {
+    if (cnt2 > rb->size) {
 
-		/* Two part vector: the rest of the buffer after the current write
-		   ptr, plus some from the start of the buffer. */
+        /* Two part vector: the rest of the buffer after the current write
+           ptr, plus some from the start of the buffer. */
 
-		vec[0].buf = &(rb->buf[r]);
-		vec[0].len = rb->size - r;
-		vec[1].buf = rb->buf;
-		vec[1].len = cnt2 & rb->size_mask;
+        vec[0].buf = &(rb->buf[r]);
+        vec[0].len = rb->size - r;
+        vec[1].buf = rb->buf;
+        vec[1].len = cnt2 & rb->size_mask;
 
-	} else {
+    } else {
 
-		/* Single part vector: just the rest of the buffer */
+        /* Single part vector: just the rest of the buffer */
 
-		vec[0].buf = &(rb->buf[r]);
-		vec[0].len = free_cnt;
-		vec[1].len = 0;
-	}
+        vec[0].buf = &(rb->buf[r]);
+        vec[0].len = free_cnt;
+        vec[1].len = 0;
+    }
 }
 
 /* The non-copying data writer. `vec' is an array of two places. Set
@@ -3623,39 +3623,39 @@ ringbuffer_get_read_vector (const ringbuffer_t * rb,
 
 static void
 ringbuffer_get_write_vector (const ringbuffer_t * rb,
-				  ringbuffer_data_t * vec)
+                  ringbuffer_data_t * vec)
 {
-	size_t free_cnt;
-	size_t cnt2;
-	size_t w, r;
+    size_t free_cnt;
+    size_t cnt2;
+    size_t w, r;
 
-	w = rb->write_ptr;
-	r = rb->read_ptr;
+    w = rb->write_ptr;
+    r = rb->read_ptr;
 
-	if (w > r) {
-		free_cnt = ((r - w + rb->size) & rb->size_mask) - 1;
-	} else if (w < r) {
-		free_cnt = (r - w) - 1;
-	} else {
-		free_cnt = rb->size - 1;
-	}
+    if (w > r) {
+        free_cnt = ((r - w + rb->size) & rb->size_mask) - 1;
+    } else if (w < r) {
+        free_cnt = (r - w) - 1;
+    } else {
+        free_cnt = rb->size - 1;
+    }
 
-	cnt2 = w + free_cnt;
+    cnt2 = w + free_cnt;
 
-	if (cnt2 > rb->size) {
+    if (cnt2 > rb->size) {
 
-		/* Two part vector: the rest of the buffer after the current write
-		   ptr, plus some from the start of the buffer. */
+        /* Two part vector: the rest of the buffer after the current write
+           ptr, plus some from the start of the buffer. */
 
-		vec[0].buf = &(rb->buf[w]);
-		vec[0].len = rb->size - w;
-		vec[1].buf = rb->buf;
-		vec[1].len = cnt2 & rb->size_mask;
-	} else {
-		vec[0].buf = &(rb->buf[w]);
-		vec[0].len = free_cnt;
-		vec[1].len = 0;
-	}
+        vec[0].buf = &(rb->buf[w]);
+        vec[0].len = rb->size - w;
+        vec[1].buf = rb->buf;
+        vec[1].len = cnt2 & rb->size_mask;
+    } else {
+        vec[0].buf = &(rb->buf[w]);
+        vec[0].len = free_cnt;
+        vec[1].len = 0;
+    }
 }
 
 #endif // __ring_buffer__
@@ -3747,7 +3747,7 @@ typedef std::map<FAUSTFLOAT*, ringbuffer_t*> ztimedmap;
 
 class GUI : public UI
 {
-		
+        
     private:
      
         static std::list<GUI*> fGuiList;
@@ -3757,12 +3757,12 @@ class GUI : public UI
      public:
             
         GUI():fStopped(false)
-        {	
+        {
             fGuiList.push_back(this);
         }
         
-        virtual ~GUI() 
-        {   
+        virtual ~GUI()
+        {
             // delete all items
             for (const auto& it : fZoneMap) {
                 delete it.second;
@@ -3896,17 +3896,17 @@ class uiItem : public uiTypedItemReal<FAUSTFLOAT> {
 
     public:
 
-        virtual ~uiItem() 
+        virtual ~uiItem()
         {}
 
-		void modifyZone(FAUSTFLOAT v)
-		{
-			fCache = v;
-			if (*fZone != v) {
-				*fZone = v;
-				fGUI->updateZone(fZone);
-			}
-		}
+        void modifyZone(FAUSTFLOAT v)
+        {
+            fCache = v;
+            if (*fZone != v) {
+                *fZone = v;
+                fGUI->updateZone(fZone);
+            }
+        }
 
 };
 
@@ -3968,11 +3968,11 @@ class uiCallbackItem : public uiItem {
         uiCallbackItem(GUI* ui, FAUSTFLOAT* zone, uiCallback foo, void* data)
         : uiItem(ui, zone), fCallback(foo), fData(data) {}
         
-        virtual void reflectZone() 
-        {		
+        virtual void reflectZone()
+        {
             FAUSTFLOAT v = *fZone;
-            fCache = v; 
-            fCallback(v, fData);	
+            fCache = v;
+            fCallback(v, fData);
         }
 };
 
@@ -4045,10 +4045,10 @@ class uiGroupItem : public uiItem
     
         uiGroupItem(GUI* ui, FAUSTFLOAT* zone):uiItem(ui, zone)
         {}
-        virtual ~uiGroupItem() 
+        virtual ~uiGroupItem()
         {}
         
-        virtual void reflectZone() 
+        virtual void reflectZone()
         {
             FAUSTFLOAT v = *fZone;
             fCache = v;
@@ -4458,7 +4458,7 @@ class FAUST_API JSONUIReal : public PathBuilder, public Meta, public UIReal<REAL
 
         // -- passive widgets
     
-        virtual void addGenericBargraph(const char* label, const char* name, REAL min, REAL max) 
+        virtual void addGenericBargraph(const char* label, const char* name, REAL min, REAL max)
         {
             std::string path = buildPath(label);
             fFullPaths.push_back(path);
@@ -4488,7 +4488,7 @@ class FAUST_API JSONUIReal : public PathBuilder, public Meta, public UIReal<REAL
             fCloseUIPar = ',';
         }
 
-        virtual void addHorizontalBargraph(const char* label, REAL* zone, REAL min, REAL max) 
+        virtual void addHorizontalBargraph(const char* label, REAL* zone, REAL min, REAL max)
         {
             addGenericBargraph(label, "hbargraph", min, max);
         }
@@ -5698,7 +5698,7 @@ class uiMidiPitchWheel : public uiMidiTimedItem {
         }
         
         void modifyZone(FAUSTFLOAT v)
-        { 
+        {
             if (fInputCtrl) {
                 uiItem::modifyZone(FAUSTFLOAT(fConverter.ui2faust(v)));
             }
@@ -5757,7 +5757,7 @@ class uiMidiKeyOn : public uiMidiTimedItem, public uiConverter {
         }
         
         void modifyZone(FAUSTFLOAT v)
-        { 
+        {
             if (fInputCtrl) {
                 uiItem::modifyZone(FAUSTFLOAT(fConverter->ui2faust(v)));
             }
@@ -5810,7 +5810,7 @@ class uiMidiKeyOff : public uiMidiTimedItem, public uiConverter {
         }
         
         void modifyZone(FAUSTFLOAT v)
-        { 
+        {
             if (fInputCtrl) {
                 uiItem::modifyZone(FAUSTFLOAT(fConverter->ui2faust(v)));
             }
@@ -5863,7 +5863,7 @@ class uiMidiKeyPress : public uiMidiTimedItem, public uiConverter {
         }
         
         void modifyZone(FAUSTFLOAT v)
-        { 
+        {
             if (fInputCtrl) {
                 uiItem::modifyZone(FAUSTFLOAT(fConverter->ui2faust(v)));
             }
@@ -6024,7 +6024,7 @@ class MidiUI : public GUI, public midi, public midi_interface, public MetaDataUI
             fTimeStamp = false;
         }
  
-        virtual ~MidiUI() 
+        virtual ~MidiUI()
         {
             // Remove from fMidiHandler
             fMidiHandler->removeMidiIn(this);
@@ -6064,7 +6064,7 @@ class MidiUI : public GUI, public midi, public midi_interface, public MetaDataUI
 
         // -- passive widgets
 
-        virtual void addHorizontalBargraph(const char* label, FAUSTFLOAT* zone, FAUSTFLOAT min, FAUSTFLOAT max) 
+        virtual void addHorizontalBargraph(const char* label, FAUSTFLOAT* zone, FAUSTFLOAT min, FAUSTFLOAT max)
         {
             addGenericZone(zone, min, max, false);
         }
@@ -6126,12 +6126,12 @@ class MidiUI : public GUI, public midi, public midi_interface, public MetaDataUI
             updateTable1<TProgChangeTable>(fProgChangeTable, date, channel, pgm);
         }
         
-        void pitchWheel(double date, int channel, int wheel) 
+        void pitchWheel(double date, int channel, int wheel)
         {
             updateTable1<TPitchWheelTable>(fPitchWheelTable, date, channel, wheel);
         }
         
-        void keyPress(double date, int channel, int pitch, int press) 
+        void keyPress(double date, int channel, int pitch, int press)
         {
             updateTable2<TKeyPressTable>(fKeyPressTable, date, channel, pitch, press);
         }
@@ -6763,7 +6763,7 @@ class dsp_crossfader: public dsp_binary_combiner {
  *
  * Each operation takes two DSP and a optional layout and label parameters, returns the combined DSPs,
  * or null if failure with an error message.
- * 
+ *
  * It includes methods to create sequencers, parallelizers, splitters, mergers, recursivers, and crossfaders.
  */
 
@@ -8380,7 +8380,7 @@ class proxy_dsp : public base_dsp {
         
         virtual void buildUserInterface(UI* ui) { fDecoder->buildUserInterface(ui); }
         
-        // To possibly implement in a concrete proxy base_dsp 
+        // To possibly implement in a concrete proxy base_dsp
         virtual void init(int sample_rate)
         {
             instanceInit(sample_rate);
@@ -8401,7 +8401,7 @@ class proxy_dsp : public base_dsp {
         virtual void metadata(Meta* m) { fDecoder->metadata(m); }
     
         virtual void compute(int count, FAUSTFLOAT** inputs, FAUSTFLOAT** outputs) {}
-        virtual void compute(double date_usec, int count, FAUSTFLOAT** inputs, FAUSTFLOAT** outputs) {} 
+        virtual void compute(double date_usec, int count, FAUSTFLOAT** inputs, FAUSTFLOAT** outputs) {}
         
 };
 
@@ -8517,7 +8517,7 @@ class FAUST_API DecoratorUI : public UI
     
 };
 
-// Defined here to simplify header #include inclusion 
+// Defined here to simplify header #include inclusion
 class FAUST_API SoundUIInterface : public GenericUI {};
 
 #endif
@@ -10057,7 +10057,7 @@ class uiComponent : public uiBase, public juce::Component, public uiItem
 
 };
 
-/** 
+/**
  * \brief   Intern class for all kind of sliders.
  * \see     SliderType
  */
@@ -10165,8 +10165,8 @@ class uiSlider : public uiComponent, public uiConverter, private juce::Slider::L
             modifyZone(FAUSTFLOAT(fConverter->ui2faust(v)));
         }
 
-        /** 
-         * Set the good coordinates and size for the juce::Slider object depending 
+        /**
+         * Set the good coordinates and size for the juce::Slider object depending
          * on its SliderType, whenever the layout size changes.
          */
         void resized() override
@@ -10245,8 +10245,8 @@ class uiButton : public uiComponent, private juce::Button::Listener
             addAndMakeVisible(fButton);
         }
 
-        /** 
-         * Has to be defined because its a pure virtual function of juce::Button::Listener, 
+        /**
+         * Has to be defined because its a pure virtual function of juce::Button::Listener,
          * which uiButton derives from. Control of user actions is done in buttonStateChanged.
          * \see buttonStateChanged
          */
@@ -10347,7 +10347,7 @@ class uiMenu : public uiComponent, private juce::ComboBox::Listener
          * \brief   Constructor.
          * \details Initialize the uiComponent and Menu specific variables, and the juce::ComboBox parameters.
          *          Menu is considered as a slider in the FAUST logic, with a step of one. The first item
-         *          would be 0 on a slider, the second 1, etc. Each "slider value" is associated with a 
+         *          would be 0 on a slider, the second 1, etc. Each "slider value" is associated with a
          *          string.
          *
          * \param   gui, zone, w, h, tooltip, label     uiComponent variables.
@@ -10458,9 +10458,9 @@ class uiRadioButton : public uiComponent, private juce::Button::Listener
          * \brief   Constructor.
          * \details Initialize the uiComponent variables, and the RadioButton specific variables
          *          and parameters. Works in a similar way to the Menu, because it is a special
-         *          kind of sliders in the faust logic. 
+         *          kind of sliders in the faust logic.
          * \see     uiMenu
-         * 
+         *
          * \param   gui, zone, tooltip, label   uiComponent variables.
          * \param   w                           uiComponent variable and width of the RadioButton widget.
          * \param   h                           uiComponent variable and height of the RadioButton widget.
@@ -11391,7 +11391,7 @@ class uiBox : public uiBase, public juce::Component
             }
         }
 
-        /** 
+        /**
          * Fill the uiBox bounds with a grey color, different shades depending on its order.
          * Write the uiBox name if it needs to.
          */
@@ -11499,7 +11499,7 @@ class JuceGUI : public GUI, public MetaDataUI, public juce::Component
     public:
         /**
          * \brief   Constructor, displaying the *current state* of all controller zones.
-         * \details Initialize the JuceGUI specific variables. 
+         * \details Initialize the JuceGUI specific variables.
          */
         JuceGUI():fRadioGroupID(1) // fRadioGroupID must start at 1
         {
@@ -11906,8 +11906,8 @@ struct JuceStateUI : public MapUI {
 #endif
 
 /*
- The soundfile structure to be used by the DSP code. Soundfile has a MAX_SOUNDFILE_PARTS parts 
- (even a single soundfile or an empty soundfile). 
+ The soundfile structure to be used by the DSP code. Soundfile has a MAX_SOUNDFILE_PARTS parts
+ (even a single soundfile or an empty soundfile).
  The fLength, fOffset and fSR fields are filled accordingly by repeating the actual parts if needed.
  The fBuffers contains MAX_CHAN non-interleaved arrays of samples.
  
@@ -12722,7 +12722,7 @@ static Esp32Reader gReader;
 /*
  A 'MemoryReader' object can be used to prepare a set of sound resources in memory, to be used by SoundUI::addSoundfile.
  
- A Soundfile* object will have to be filled with a list of sound resources: the fLength, fOffset, fSampleRate and fBuffers fields 
+ A Soundfile* object will have to be filled with a list of sound resources: the fLength, fOffset, fSampleRate and fBuffers fields
  have to be completed with the appropriate values, and will be accessed in the DSP object while running.
  *
  */
@@ -12885,8 +12885,8 @@ struct VFLibsndfile {
         VFLibsndfile* vf = static_cast<VFLibsndfile*>(user_data);
         
         /*
-         **	This will break badly for files over 2Gig in length, but
-         **	is sufficient for testing.
+         **    This will break badly for files over 2Gig in length, but
+         **    is sufficient for testing.
          */
         if (vf->fOffset + count > vf->fLength) {
             count = vf->fLength - vf->fOffset;
@@ -12903,8 +12903,8 @@ struct VFLibsndfile {
         VFLibsndfile* vf = static_cast<VFLibsndfile*>(user_data);
         
         /*
-         **	This will break badly for files over 2Gig in length, but
-         **	is sufficient for testing.
+         **    This will break badly for files over 2Gig in length, but
+         **    is sufficient for testing.
          */
         if (vf->fOffset >= SIGNED_SIZEOF(vf->fBuffer)) {
             return 0;
@@ -12933,11 +12933,11 @@ struct VFLibsndfile {
 };
 
 struct LibsndfileReader : public SoundfileReader {
-	
+    
     LibsndfileReader() {}
-	
+    
     typedef sf_count_t (* sample_read)(SNDFILE* sndfile, void* buffer, sf_count_t frames);
-	
+    
     // Check file
     bool checkFile(const std::string& path_name) override
     {
@@ -12985,7 +12985,7 @@ struct LibsndfileReader : public SoundfileReader {
     // Open the file and returns its length and channels
     void getParamsFile(const std::string& path_name, int& channels, int& length) override
     {
-        SF_INFO	snd_info;
+        SF_INFO    snd_info;
         snd_info.format = 0;
         SNDFILE* snd_file = sf_open(path_name.c_str(), SFM_READ, &snd_info);
         getParamsFileAux(snd_file, snd_info, channels, length);
@@ -12993,7 +12993,7 @@ struct LibsndfileReader : public SoundfileReader {
     
     void getParamsFile(unsigned char* buffer, size_t size, int& channels, int& length) override
     {
-        SF_INFO	snd_info;
+        SF_INFO    snd_info;
         snd_info.format = 0;
         VFLibsndfile vio(buffer, size);
         SNDFILE* snd_file = sf_open_virtual(&vio.fVIO, SFM_READ, &snd_info, &vio);
@@ -13015,7 +13015,7 @@ struct LibsndfileReader : public SoundfileReader {
     // Read the file
     void readFile(Soundfile* soundfile, const std::string& path_name, int part, int& offset, int max_chan) override
     {
-        SF_INFO	snd_info;
+        SF_INFO    snd_info;
         snd_info.format = 0;
         SNDFILE* snd_file = sf_open(path_name.c_str(), SFM_READ, &snd_info);
         readFileAux(soundfile, snd_file, snd_info, part, offset, max_chan);
@@ -13023,13 +13023,13 @@ struct LibsndfileReader : public SoundfileReader {
     
     void readFile(Soundfile* soundfile, unsigned char* buffer, size_t length, int part, int& offset, int max_chan) override
     {
-        SF_INFO	snd_info;
+        SF_INFO    snd_info;
         snd_info.format = 0;
         VFLibsndfile vio(buffer, length);
         SNDFILE* snd_file = sf_open_virtual(&vio.fVIO, SFM_READ, &snd_info, &vio);
         readFileAux(soundfile, snd_file, snd_info, part, offset, max_chan);
     }
-	
+    
     // Will be called to fill all parts from 0 to MAX_SOUNDFILE_PARTS-1
     void readFileAux(Soundfile* soundfile, SNDFILE* snd_file, const SF_INFO& snd_info, int part, int& offset, int max_chan)
     {
@@ -13048,7 +13048,7 @@ struct LibsndfileReader : public SoundfileReader {
         soundfile->fSR[part] = snd_info.samplerate;
     #endif
         soundfile->fOffset[part] = offset;
-		
+        
         // Read and fill snd_info.channels number of channels
         sf_count_t nbf;
         
@@ -13136,7 +13136,7 @@ struct LibsndfileReader : public SoundfileReader {
             offset += nbf;
         #endif
         } while (nbf == BUFFER_SIZE);
-		
+        
         sf_close(snd_file);
     #ifdef _SAMPLERATE
         if (resampler) src_delete(resampler);
@@ -13156,7 +13156,7 @@ static Soundfile* defaultsound = nullptr;
 
 class SoundUI : public SoundUIInterface
 {
-		
+        
     protected:
     
         // The soundfile directories
@@ -14383,7 +14383,7 @@ class juce_midi : public juce_midi_handler, public juce::MidiInputCallback {
         }
         
         void stopMidi()
-        { 
+        {
             fMidiIn->stop();
         }
     
@@ -14394,32 +14394,32 @@ class juce_midi : public juce_midi_handler, public juce::MidiInputCallback {
             return nullptr;
         }
         
-        void keyOff(int channel, int pitch, int velocity) 
+        void keyOff(int channel, int pitch, int velocity)
         {
             fMidiOut->sendMessageNow(juce::MidiMessage::noteOff(channel + 1, pitch, juce::uint8(velocity)));
         }
         
-        void ctrlChange(int channel, int ctrl, int val) 
+        void ctrlChange(int channel, int ctrl, int val)
         {
             fMidiOut->sendMessageNow(juce::MidiMessage::controllerEvent(channel + 1, ctrl, juce::uint8(val)));
         }
         
-        void chanPress(int channel, int press) 
+        void chanPress(int channel, int press)
         {
             fMidiOut->sendMessageNow(juce::MidiMessage::channelPressureChange(channel + 1, press));
         }
         
-        void progChange(int channel, int pgm) 
+        void progChange(int channel, int pgm)
         {
             fMidiOut->sendMessageNow(juce::MidiMessage::programChange(channel + 1, pgm));
         }
           
-        void keyPress(int channel, int pitch, int press) 
+        void keyPress(int channel, int pitch, int press)
         {
             fMidiOut->sendMessageNow(juce::MidiMessage::aftertouchChange(channel + 1, pitch, press));
         }
    
-        void pitchWheel(int channel, int wheel) 
+        void pitchWheel(int channel, int wheel)
         {
             fMidiOut->sendMessageNow(juce::MidiMessage::pitchWheel(channel + 1, range(0, 16383, wheel)));
         }
@@ -14429,17 +14429,17 @@ class juce_midi : public juce_midi_handler, public juce::MidiInputCallback {
             // TODO
         }
     
-        void startSync(double date) 
+        void startSync(double date)
         {
             fMidiOut->sendMessageNow(juce::MidiMessage::midiStart());
         }
        
-        void stopSync(double date) 
+        void stopSync(double date)
         {
             fMidiOut->sendMessageNow(juce::MidiMessage::midiStop());
         }
         
-        void clock(double date) 
+        void clock(double date)
         {
             fMidiOut->sendMessageNow(juce::MidiMessage::midiClock());
         }
@@ -14481,7 +14481,7 @@ namespace {
 
 #if __linux__
 #include <sys/time.h>
-inline double GetCurrentTimeInUsec() 
+inline double GetCurrentTimeInUsec()
 {
     struct timeval tv;
     (void)gettimeofday(&tv, (struct timezone *)NULL);
@@ -14514,11 +14514,11 @@ struct ZoneUI : public GenericUI {
     ZoneUI():GenericUI() {}
     virtual ~ZoneUI() {}
     
-    void insertZone(FAUSTFLOAT* zone) 
-    { 
+    void insertZone(FAUSTFLOAT* zone)
+    {
         if (GUI::gTimedZoneMap.find(zone) != GUI::gTimedZoneMap.end()) {
             fZoneSet.insert(zone);
-        } 
+        }
     }
     
     // -- active widgets
@@ -14573,7 +14573,7 @@ class timed_dsp : public decorator_dsp {
         FAUSTFLOAT** fInputsSlice;
         FAUSTFLOAT** fOutputsSlice;
     
-        void computeSlice(int offset, int slice, FAUSTFLOAT** inputs, FAUSTFLOAT** outputs) 
+        void computeSlice(int offset, int slice, FAUSTFLOAT** inputs, FAUSTFLOAT** outputs)
         {
             if (slice > 0) {
                 for (int chan = 0; chan < fDSP->getNumInputs(); chan++) {
@@ -14583,7 +14583,7 @@ class timed_dsp : public decorator_dsp {
                     fOutputsSlice[chan] = &(outputs[chan][offset]);
                 }
                 fDSP->compute(slice, fInputsSlice, fOutputsSlice);
-            } 
+            }
         }
         
         double convertUsecToSample(double usec)
@@ -14603,7 +14603,7 @@ class timed_dsp : public decorator_dsp {
                 it1 = GUI::gTimedZoneMap.find(*it3);
                 if (it1 != GUI::gTimedZoneMap.end()) { // Check if zone still in global GUI::gTimedZoneMap (since MidiUI may have been desallocated)
                     DatedControl date2;
-                    if (ringbuffer_peek((*it1).second, (char*)&date2, sizeof(DatedControl)) == sizeof(DatedControl) 
+                    if (ringbuffer_peek((*it1).second, (char*)&date2, sizeof(DatedControl)) == sizeof(DatedControl)
                         && date2.fDate < date1.fDate) {
                         it2 = it1;
                         date1 = date2;
@@ -14640,7 +14640,7 @@ class timed_dsp : public decorator_dsp {
                 
                 // Move ringbuffer pointer
                 ringbuffer_read_advance(control_values, sizeof(DatedControl));
-            } 
+            }
             
             // Compute last audio slice
             slice = count - offset;
@@ -14654,7 +14654,7 @@ class timed_dsp : public decorator_dsp {
             fInputsSlice = new FAUSTFLOAT*[base_dsp->getNumInputs()];
             fOutputsSlice = new FAUSTFLOAT*[base_dsp->getNumOutputs()];
         }
-        virtual ~timed_dsp() 
+        virtual ~timed_dsp()
         {
             delete [] fInputsSlice;
             delete [] fOutputsSlice;
@@ -14665,9 +14665,9 @@ class timed_dsp : public decorator_dsp {
             fDSP->init(sample_rate);
         }
         
-        virtual void buildUserInterface(UI* ui_interface)   
-        { 
-            fDSP->buildUserInterface(ui_interface); 
+        virtual void buildUserInterface(UI* ui_interface)
+        {
+            fDSP->buildUserInterface(ui_interface);
             // Only keep zones that are in GUI::gTimedZoneMap
             fDSP->buildUserInterface(&fZoneUI);
         }
@@ -14681,7 +14681,7 @@ class timed_dsp : public decorator_dsp {
         virtual void compute(int count, FAUSTFLOAT** inputs, FAUSTFLOAT** outputs)
         {
             compute(::GetCurrentTimeInUsec(), count, inputs, outputs);
-        }    
+        }
         
         virtual void compute(double date_usec, int count, FAUSTFLOAT** inputs, FAUSTFLOAT** outputs)
         {
@@ -14700,7 +14700,7 @@ class timed_dsp : public decorator_dsp {
                 // RtMidi mode: timestamp must be converted in frames
                 computeAux(count, inputs, outputs, true);
                 
-                // Keep call date 
+                // Keep call date
                 fDateUsec = date_usec + fOffsetUsec;
             }
         }
@@ -14713,7 +14713,7 @@ class timed_dsp : public decorator_dsp {
 
 #if defined(POLY2)
 #include "effect.h"
-#endif 
+#endif
 
 // we require macro declarations
 #define FAUST_UIMACROS
@@ -14731,7 +14731,7 @@ class timed_dsp : public decorator_dsp {
 
 #ifndef FAUSTFLOAT
 #define FAUSTFLOAT float
-#endif 
+#endif
 
 /* link with : "" */
 #include <algorithm>
@@ -14739,11 +14739,11 @@ class timed_dsp : public decorator_dsp {
 #include <cstdint>
 #include <math.h>
 
-#ifndef FAUSTCLASS 
+#ifndef FAUSTCLASS
 #define FAUSTCLASS mydsp
 #endif
 
-#ifdef __APPLE__ 
+#ifdef __APPLE__
 #define exp10f __exp10f
 #define exp10 __exp10
 #endif
@@ -14755,39 +14755,39 @@ class timed_dsp : public decorator_dsp {
 #endif
 
 class mydspSIG0 {
-	
+    
   public:
-	
-	int iVec0[2];
-	int iRec0[2];
-	
+    
+    int iVec0[2];
+    int iRec0[2];
+    
   public:
-	
-	int getNumInputsmydspSIG0() {
-		return 0;
-	}
-	int getNumOutputsmydspSIG0() {
-		return 1;
-	}
-	
-	void instanceInitmydspSIG0(int sample_rate) {
-		for (int l0 = 0; l0 < 2; l0 = l0 + 1) {
-			iVec0[l0] = 0;
-		}
-		for (int l1 = 0; l1 < 2; l1 = l1 + 1) {
-			iRec0[l1] = 0;
-		}
-	}
-	
-	void fillmydspSIG0(int count, float* table) {
-		for (int i1 = 0; i1 < count; i1 = i1 + 1) {
-			iVec0[0] = 1;
-			iRec0[0] = (iVec0[1] + iRec0[1]) % 65536;
-			table[i1] = std::sin(9.58738e-05f * float(iRec0[0]));
-			iVec0[1] = iVec0[0];
-			iRec0[1] = iRec0[0];
-		}
-	}
+    
+    int getNumInputsmydspSIG0() {
+        return 0;
+    }
+    int getNumOutputsmydspSIG0() {
+        return 1;
+    }
+    
+    void instanceInitmydspSIG0(int sample_rate) {
+        for (int l0 = 0; l0 < 2; l0 = l0 + 1) {
+            iVec0[l0] = 0;
+        }
+        for (int l1 = 0; l1 < 2; l1 = l1 + 1) {
+            iRec0[l1] = 0;
+        }
+    }
+    
+    void fillmydspSIG0(int count, float* table) {
+        for (int i1 = 0; i1 < count; i1 = i1 + 1) {
+            iVec0[0] = 1;
+            iRec0[0] = (iVec0[1] + iRec0[1]) % 65536;
+            table[i1] = std::sin(9.58738e-05f * float(iRec0[0]));
+            iVec0[1] = iVec0[0];
+            iRec0[1] = iRec0[0];
+        }
+    }
 
 };
 
@@ -14795,39 +14795,39 @@ static mydspSIG0* newmydspSIG0() { return (mydspSIG0*)new mydspSIG0(); }
 static void deletemydspSIG0(mydspSIG0* dsp) { delete dsp; }
 
 class mydspSIG1 {
-	
+    
   public:
-	
-	int iVec2[2];
-	int iRec4[2];
-	
+    
+    int iVec2[2];
+    int iRec4[2];
+    
   public:
-	
-	int getNumInputsmydspSIG1() {
-		return 0;
-	}
-	int getNumOutputsmydspSIG1() {
-		return 1;
-	}
-	
-	void instanceInitmydspSIG1(int sample_rate) {
-		for (int l6 = 0; l6 < 2; l6 = l6 + 1) {
-			iVec2[l6] = 0;
-		}
-		for (int l7 = 0; l7 < 2; l7 = l7 + 1) {
-			iRec4[l7] = 0;
-		}
-	}
-	
-	void fillmydspSIG1(int count, float* table) {
-		for (int i2 = 0; i2 < count; i2 = i2 + 1) {
-			iVec2[0] = 1;
-			iRec4[0] = (iVec2[1] + iRec4[1]) % 65536;
-			table[i2] = std::cos(9.58738e-05f * float(iRec4[0]));
-			iVec2[1] = iVec2[0];
-			iRec4[1] = iRec4[0];
-		}
-	}
+    
+    int getNumInputsmydspSIG1() {
+        return 0;
+    }
+    int getNumOutputsmydspSIG1() {
+        return 1;
+    }
+    
+    void instanceInitmydspSIG1(int sample_rate) {
+        for (int l6 = 0; l6 < 2; l6 = l6 + 1) {
+            iVec2[l6] = 0;
+        }
+        for (int l7 = 0; l7 < 2; l7 = l7 + 1) {
+            iRec4[l7] = 0;
+        }
+    }
+    
+    void fillmydspSIG1(int count, float* table) {
+        for (int i2 = 0; i2 < count; i2 = i2 + 1) {
+            iVec2[0] = 1;
+            iRec4[0] = (iVec2[1] + iRec4[1]) % 65536;
+            table[i2] = std::cos(9.58738e-05f * float(iRec4[0]));
+            iVec2[1] = iVec2[0];
+            iRec4[1] = iRec4[0];
+        }
+    }
 
 };
 
@@ -14838,191 +14838,191 @@ static float ftbl0mydspSIG0[65536];
 static float ftbl1mydspSIG1[65536];
 
 class mydsp : public base_dsp {
-	
+    
  public:
-	
-	int iVec1[2];
-	FAUSTFLOAT fHslider0;
-	int fSampleRate;
-	float fConst0;
-	float fConst1;
-	float fRec1[2];
-	float fConst2;
-	float fConst3;
-	FAUSTFLOAT fHslider1;
-	float fRec2[2];
-	FAUSTFLOAT fHslider2;
-	FAUSTFLOAT fHslider3;
-	float fRec3[2];
-	
+    
+    int iVec1[2];
+    FAUSTFLOAT fHslider0;
+    int fSampleRate;
+    float fConst0;
+    float fConst1;
+    float fRec1[2];
+    float fConst2;
+    float fConst3;
+    FAUSTFLOAT fHslider1;
+    float fRec2[2];
+    FAUSTFLOAT fHslider2;
+    FAUSTFLOAT fHslider3;
+    float fRec3[2];
+    
  public:
-	mydsp() {
-	}
-	
-	void metadata(Meta* m) { 
-		m->declare("basics.lib/name", "Faust Basic Element Library");
-		m->declare("basics.lib/tabulateNd", "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>");
-		m->declare("basics.lib/version", "1.18.0");
-		m->declare("compile_options", "-a /usr/local/share/faust/juce/juce-plugin.cpp -lang cpp -i -ct 1 -scn base_dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0");
-		m->declare("filename", "panadero.dsp");
-		m->declare("interpolators.lib/interpolate_linear:author", "Stéphane Letz");
-		m->declare("interpolators.lib/interpolate_linear:licence", "MIT");
-		m->declare("interpolators.lib/name", "Faust Interpolator Library");
-		m->declare("interpolators.lib/remap:author", "David Braun");
-		m->declare("interpolators.lib/version", "1.3.1");
-		m->declare("maths.lib/author", "GRAME");
-		m->declare("maths.lib/copyright", "GRAME");
-		m->declare("maths.lib/license", "LGPL with exception");
-		m->declare("maths.lib/name", "Faust Math Library");
-		m->declare("maths.lib/version", "2.8.0");
-		m->declare("name", "panadero");
-		m->declare("oscillators.lib/name", "Faust Oscillator Library");
-		m->declare("oscillators.lib/version", "1.5.1");
-		m->declare("platform.lib/name", "Generic Platform Library");
-		m->declare("platform.lib/version", "1.3.0");
-		m->declare("signals.lib/name", "Faust Signal Routing Library");
-		m->declare("signals.lib/version", "1.5.0");
-	}
+    mydsp() {
+    }
+    
+    void metadata(Meta* m) {
+        m->declare("basics.lib/name", "Faust Basic Element Library");
+        m->declare("basics.lib/tabulateNd", "Copyright (C) 2023 Bart Brouns <bart@magnetophon.nl>");
+        m->declare("basics.lib/version", "1.18.0");
+        m->declare("compile_options", "-a /usr/local/share/faust/juce/juce-plugin.cpp -lang cpp -i -ct 1 -scn base_dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0");
+        m->declare("filename", "panadero.dsp");
+        m->declare("interpolators.lib/interpolate_linear:author", "Stéphane Letz");
+        m->declare("interpolators.lib/interpolate_linear:licence", "MIT");
+        m->declare("interpolators.lib/name", "Faust Interpolator Library");
+        m->declare("interpolators.lib/remap:author", "David Braun");
+        m->declare("interpolators.lib/version", "1.3.1");
+        m->declare("maths.lib/author", "GRAME");
+        m->declare("maths.lib/copyright", "GRAME");
+        m->declare("maths.lib/license", "LGPL with exception");
+        m->declare("maths.lib/name", "Faust Math Library");
+        m->declare("maths.lib/version", "2.8.0");
+        m->declare("name", "panadero");
+        m->declare("oscillators.lib/name", "Faust Oscillator Library");
+        m->declare("oscillators.lib/version", "1.5.1");
+        m->declare("platform.lib/name", "Generic Platform Library");
+        m->declare("platform.lib/version", "1.3.0");
+        m->declare("signals.lib/name", "Faust Signal Routing Library");
+        m->declare("signals.lib/version", "1.5.0");
+    }
 
-	virtual int getNumInputs() {
-		return 2;
-	}
-	virtual int getNumOutputs() {
-		return 2;
-	}
-	
-	static void classInit(int sample_rate) {
-		mydspSIG0* sig0 = newmydspSIG0();
-		sig0->instanceInitmydspSIG0(sample_rate);
-		sig0->fillmydspSIG0(65536, ftbl0mydspSIG0);
-		mydspSIG1* sig1 = newmydspSIG1();
-		sig1->instanceInitmydspSIG1(sample_rate);
-		sig1->fillmydspSIG1(65536, ftbl1mydspSIG1);
-		deletemydspSIG0(sig0);
-		deletemydspSIG1(sig1);
-	}
-	
-	virtual void instanceConstants(int sample_rate) {
-		fSampleRate = sample_rate;
-		fConst0 = std::min<float>(1.92e+05f, std::max<float>(1.0f, float(fSampleRate)));
-		fConst1 = 1.0f / fConst0;
-		fConst2 = 44.1f / fConst0;
-		fConst3 = 1.0f - fConst2;
-	}
-	
-	virtual void instanceResetUserInterface() {
-		fHslider0 = FAUSTFLOAT(1.0f);
-		fHslider1 = FAUSTFLOAT(0.0f);
-		fHslider2 = FAUSTFLOAT(0.0f);
-		fHslider3 = FAUSTFLOAT(1.8e+02f);
-	}
-	
-	virtual void instanceClear() {
-		for (int l2 = 0; l2 < 2; l2 = l2 + 1) {
-			iVec1[l2] = 0;
-		}
-		for (int l3 = 0; l3 < 2; l3 = l3 + 1) {
-			fRec1[l3] = 0.0f;
-		}
-		for (int l4 = 0; l4 < 2; l4 = l4 + 1) {
-			fRec2[l4] = 0.0f;
-		}
-		for (int l5 = 0; l5 < 2; l5 = l5 + 1) {
-			fRec3[l5] = 0.0f;
-		}
-	}
-	
-	virtual void init(int sample_rate) {
-		classInit(sample_rate);
-		instanceInit(sample_rate);
-	}
-	
-	virtual void instanceInit(int sample_rate) {
-		instanceConstants(sample_rate);
-		instanceResetUserInterface();
-		instanceClear();
-	}
-	
-	virtual mydsp* clone() {
-		return new mydsp();
-	}
-	
-	virtual int getSampleRate() {
-		return fSampleRate;
-	}
-	
-	virtual void buildUserInterface(UI* ui_interface) {
-		ui_interface->openHorizontalBox("Pan-adero");
-		ui_interface->declare(&fHslider2, "0", "");
-		ui_interface->declare(&fHslider2, "style", "knob");
-		ui_interface->addHorizontalSlider("Amount", &fHslider2, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fHslider0, "1", "");
-		ui_interface->declare(&fHslider0, "scale", "log");
-		ui_interface->declare(&fHslider0, "style", "knob");
-		ui_interface->declare(&fHslider0, "unit", "Hz");
-		ui_interface->addHorizontalSlider("Rate", &fHslider0, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.05f), FAUSTFLOAT(9e+01f), FAUSTFLOAT(0.001f));
-		ui_interface->declare(&fHslider3, "2", "");
-		ui_interface->declare(&fHslider3, "style", "knob");
-		ui_interface->declare(&fHslider3, "unit", "°");
-		ui_interface->addHorizontalSlider("Phase", &fHslider3, FAUSTFLOAT(1.8e+02f), FAUSTFLOAT(0.0f), FAUSTFLOAT(3.6e+02f), FAUSTFLOAT(15.0f));
-		ui_interface->declare(&fHslider1, "3", "");
-		ui_interface->declare(&fHslider1, "style", "knob");
-		ui_interface->addHorizontalSlider("Shape", &fHslider1, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
-		ui_interface->closeBox();
-	}
-	
-	virtual void compute(int count, FAUSTFLOAT** RESTRICT inputs, FAUSTFLOAT** RESTRICT outputs) {
-		FAUSTFLOAT* input0 = inputs[0];
-		FAUSTFLOAT* input1 = inputs[1];
-		FAUSTFLOAT* output0 = outputs[0];
-		FAUSTFLOAT* output1 = outputs[1];
-		float fSlow0 = fConst1 * float(fHslider0);
-		float fSlow1 = fConst2 * float(fHslider1);
-		float fSlow2 = float(fHslider2);
-		float fSlow3 = fConst2 * float(fHslider3);
-		for (int i0 = 0; i0 < count; i0 = i0 + 1) {
-			iVec1[0] = 1;
-			float fTemp0 = ((1 - iVec1[1]) ? 0.0f : fSlow0 + fRec1[1]);
-			fRec1[0] = fTemp0 - std::floor(fTemp0);
-			int iTemp1 = std::max<int>(0, std::min<int>(int(65536.0f * fRec1[0]), 65535));
-			float fTemp2 = ftbl0mydspSIG0[iTemp1];
-			fRec2[0] = fSlow1 + fConst3 * fRec2[1];
-			output0[i0] = FAUSTFLOAT(float(input0[i0]) * (fSlow2 * (0.5f * (fTemp2 + fRec2[0] * (tanhf(1e+01f * fTemp2) - fTemp2) + 1.0f) + -1.0f) + 1.0f));
-			fRec3[0] = fSlow3 + fConst3 * fRec3[1];
-			float fTemp3 = 0.017453292f * fRec3[0];
-			float fTemp4 = fTemp2 * std::cos(fTemp3) + ftbl1mydspSIG1[iTemp1] * std::sin(fTemp3);
-			output1[i0] = FAUSTFLOAT(float(input1[i0]) * (fSlow2 * (0.5f * (fTemp4 + fRec2[0] * (tanhf(1e+01f * fTemp4) - fTemp4) + 1.0f) + -1.0f) + 1.0f));
-			iVec1[1] = iVec1[0];
-			fRec1[1] = fRec1[0];
-			fRec2[1] = fRec2[0];
-			fRec3[1] = fRec3[0];
-		}
-	}
+    virtual int getNumInputs() {
+        return 2;
+    }
+    virtual int getNumOutputs() {
+        return 2;
+    }
+    
+    static void classInit(int sample_rate) {
+        mydspSIG0* sig0 = newmydspSIG0();
+        sig0->instanceInitmydspSIG0(sample_rate);
+        sig0->fillmydspSIG0(65536, ftbl0mydspSIG0);
+        mydspSIG1* sig1 = newmydspSIG1();
+        sig1->instanceInitmydspSIG1(sample_rate);
+        sig1->fillmydspSIG1(65536, ftbl1mydspSIG1);
+        deletemydspSIG0(sig0);
+        deletemydspSIG1(sig1);
+    }
+    
+    virtual void instanceConstants(int sample_rate) {
+        fSampleRate = sample_rate;
+        fConst0 = std::min<float>(1.92e+05f, std::max<float>(1.0f, float(fSampleRate)));
+        fConst1 = 1.0f / fConst0;
+        fConst2 = 44.1f / fConst0;
+        fConst3 = 1.0f - fConst2;
+    }
+    
+    virtual void instanceResetUserInterface() {
+        fHslider0 = FAUSTFLOAT(1.0f);
+        fHslider1 = FAUSTFLOAT(0.0f);
+        fHslider2 = FAUSTFLOAT(0.0f);
+        fHslider3 = FAUSTFLOAT(1.8e+02f);
+    }
+    
+    virtual void instanceClear() {
+        for (int l2 = 0; l2 < 2; l2 = l2 + 1) {
+            iVec1[l2] = 0;
+        }
+        for (int l3 = 0; l3 < 2; l3 = l3 + 1) {
+            fRec1[l3] = 0.0f;
+        }
+        for (int l4 = 0; l4 < 2; l4 = l4 + 1) {
+            fRec2[l4] = 0.0f;
+        }
+        for (int l5 = 0; l5 < 2; l5 = l5 + 1) {
+            fRec3[l5] = 0.0f;
+        }
+    }
+    
+    virtual void init(int sample_rate) {
+        classInit(sample_rate);
+        instanceInit(sample_rate);
+    }
+    
+    virtual void instanceInit(int sample_rate) {
+        instanceConstants(sample_rate);
+        instanceResetUserInterface();
+        instanceClear();
+    }
+    
+    virtual mydsp* clone() {
+        return new mydsp();
+    }
+    
+    virtual int getSampleRate() {
+        return fSampleRate;
+    }
+    
+    virtual void buildUserInterface(UI* ui_interface) {
+        ui_interface->openHorizontalBox("Pan-adero");
+        ui_interface->declare(&fHslider2, "0", "");
+        ui_interface->declare(&fHslider2, "style", "knob");
+        ui_interface->addHorizontalSlider("Amount", &fHslider2, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+        ui_interface->declare(&fHslider0, "1", "");
+        ui_interface->declare(&fHslider0, "scale", "log");
+        ui_interface->declare(&fHslider0, "style", "knob");
+        ui_interface->declare(&fHslider0, "unit", "Hz");
+        ui_interface->addHorizontalSlider("Rate", &fHslider0, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.05f), FAUSTFLOAT(9e+01f), FAUSTFLOAT(0.001f));
+        ui_interface->declare(&fHslider3, "2", "");
+        ui_interface->declare(&fHslider3, "style", "knob");
+        ui_interface->declare(&fHslider3, "unit", "°");
+        ui_interface->addHorizontalSlider("Phase", &fHslider3, FAUSTFLOAT(1.8e+02f), FAUSTFLOAT(0.0f), FAUSTFLOAT(3.6e+02f), FAUSTFLOAT(15.0f));
+        ui_interface->declare(&fHslider1, "3", "");
+        ui_interface->declare(&fHslider1, "style", "knob");
+        ui_interface->addHorizontalSlider("Shape", &fHslider1, FAUSTFLOAT(0.0f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+        ui_interface->closeBox();
+    }
+    
+    virtual void compute(int count, FAUSTFLOAT** RESTRICT inputs, FAUSTFLOAT** RESTRICT outputs) {
+        FAUSTFLOAT* input0 = inputs[0];
+        FAUSTFLOAT* input1 = inputs[1];
+        FAUSTFLOAT* output0 = outputs[0];
+        FAUSTFLOAT* output1 = outputs[1];
+        float fSlow0 = fConst1 * float(fHslider0);
+        float fSlow1 = fConst2 * float(fHslider1);
+        float fSlow2 = float(fHslider2);
+        float fSlow3 = fConst2 * float(fHslider3);
+        for (int i0 = 0; i0 < count; i0 = i0 + 1) {
+            iVec1[0] = 1;
+            float fTemp0 = ((1 - iVec1[1]) ? 0.0f : fSlow0 + fRec1[1]);
+            fRec1[0] = fTemp0 - std::floor(fTemp0);
+            int iTemp1 = std::max<int>(0, std::min<int>(int(65536.0f * fRec1[0]), 65535));
+            float fTemp2 = ftbl0mydspSIG0[iTemp1];
+            fRec2[0] = fSlow1 + fConst3 * fRec2[1];
+            output0[i0] = FAUSTFLOAT(float(input0[i0]) * (fSlow2 * (0.5f * (fTemp2 + fRec2[0] * (tanhf(1e+01f * fTemp2) - fTemp2) + 1.0f) + -1.0f) + 1.0f));
+            fRec3[0] = fSlow3 + fConst3 * fRec3[1];
+            float fTemp3 = 0.017453292f * fRec3[0];
+            float fTemp4 = fTemp2 * std::cos(fTemp3) + ftbl1mydspSIG1[iTemp1] * std::sin(fTemp3);
+            output1[i0] = FAUSTFLOAT(float(input1[i0]) * (fSlow2 * (0.5f * (fTemp4 + fRec2[0] * (tanhf(1e+01f * fTemp4) - fTemp4) + 1.0f) + -1.0f) + 1.0f));
+            iVec1[1] = iVec1[0];
+            fRec1[1] = fRec1[0];
+            fRec2[1] = fRec2[0];
+            fRec3[1] = fRec3[0];
+        }
+    }
 
 };
 
 #ifdef FAUST_UIMACROS
-	
-	#define FAUST_FILE_NAME "panadero.dsp"
-	#define FAUST_CLASS_NAME "mydsp"
-	#define FAUST_COMPILATION_OPIONS "-a /usr/local/share/faust/juce/juce-plugin.cpp -lang cpp -i -ct 1 -scn base_dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0"
-	#define FAUST_INPUTS 2
-	#define FAUST_OUTPUTS 2
-	#define FAUST_ACTIVES 4
-	#define FAUST_PASSIVES 0
+    
+    #define FAUST_FILE_NAME "panadero.dsp"
+    #define FAUST_CLASS_NAME "mydsp"
+    #define FAUST_COMPILATION_OPIONS "-a /usr/local/share/faust/juce/juce-plugin.cpp -lang cpp -i -ct 1 -scn base_dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0"
+    #define FAUST_INPUTS 2
+    #define FAUST_OUTPUTS 2
+    #define FAUST_ACTIVES 4
+    #define FAUST_PASSIVES 0
 
-	FAUST_ADDHORIZONTALSLIDER("Pan-adero/Amount", fHslider2, 0.0f, 0.0f, 1.0f, 0.001f);
-	FAUST_ADDHORIZONTALSLIDER("Pan-adero/Rate", fHslider0, 1.0f, 0.05f, 9e+01f, 0.001f);
-	FAUST_ADDHORIZONTALSLIDER("Pan-adero/Phase", fHslider3, 1.8e+02f, 0.0f, 3.6e+02f, 15.0f);
-	FAUST_ADDHORIZONTALSLIDER("Pan-adero/Shape", fHslider1, 0.0f, 0.0f, 1.0f, 0.001f);
+    FAUST_ADDHORIZONTALSLIDER("Pan-adero/Amount", fHslider2, 0.0f, 0.0f, 1.0f, 0.001f);
+    FAUST_ADDHORIZONTALSLIDER("Pan-adero/Rate", fHslider0, 1.0f, 0.05f, 9e+01f, 0.001f);
+    FAUST_ADDHORIZONTALSLIDER("Pan-adero/Phase", fHslider3, 1.8e+02f, 0.0f, 3.6e+02f, 15.0f);
+    FAUST_ADDHORIZONTALSLIDER("Pan-adero/Shape", fHslider1, 0.0f, 0.0f, 1.0f, 0.001f);
 
-	#define FAUST_LIST_ACTIVES(p) \
-		p(HORIZONTALSLIDER, Amount, "Pan-adero/Amount", fHslider2, 0.0f, 0.0f, 1.0f, 0.001f) \
-		p(HORIZONTALSLIDER, Rate, "Pan-adero/Rate", fHslider0, 1.0f, 0.05f, 9e+01f, 0.001f) \
-		p(HORIZONTALSLIDER, Phase, "Pan-adero/Phase", fHslider3, 1.8e+02f, 0.0f, 3.6e+02f, 15.0f) \
-		p(HORIZONTALSLIDER, Shape, "Pan-adero/Shape", fHslider1, 0.0f, 0.0f, 1.0f, 0.001f) \
+    #define FAUST_LIST_ACTIVES(p) \
+        p(HORIZONTALSLIDER, Amount, "Pan-adero/Amount", fHslider2, 0.0f, 0.0f, 1.0f, 0.001f) \
+        p(HORIZONTALSLIDER, Rate, "Pan-adero/Rate", fHslider0, 1.0f, 0.05f, 9e+01f, 0.001f) \
+        p(HORIZONTALSLIDER, Phase, "Pan-adero/Phase", fHslider3, 1.8e+02f, 0.0f, 3.6e+02f, 15.0f) \
+        p(HORIZONTALSLIDER, Shape, "Pan-adero/Shape", fHslider1, 0.0f, 0.0f, 1.0f, 0.001f) \
 
-	#define FAUST_LIST_PASSIVES(p) \
+    #define FAUST_LIST_PASSIVES(p) \
 
 #endif
 
@@ -15355,9 +15355,9 @@ class FaustPlugInAudioProcessorEditor : public juce::AudioProcessorEditor
         FaustPlugInAudioProcessor& processor;
         
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FaustPlugInAudioProcessorEditor)
-#ifndef PLUGIN_MAGIC        
+#ifndef PLUGIN_MAGIC
         JuceGUI fJuceGUI;
-#endif    
+#endif
 };
 
 #ifndef PLUGIN_MAGIC
@@ -15365,7 +15365,7 @@ FaustPlugInAudioProcessor::FaustPlugInAudioProcessor()
 : juce::AudioProcessor (getBusesProperties()), fParameterUI(this)
 #else
 FaustPlugInAudioProcessor::FaustPlugInAudioProcessor()
-: foleys::MagicProcessor (getBusesProperties()), fParameterUI(this)	
+: foleys::MagicProcessor (getBusesProperties()), fParameterUI(this)
 #endif
 {
     bool midi_sync = false;
@@ -15375,7 +15375,7 @@ FaustPlugInAudioProcessor::FaustPlugInAudioProcessor()
     mydsp* tmp_dsp = new mydsp();
     MidiMeta::analyse(tmp_dsp, midi, midi_sync, nvoices);
     delete tmp_dsp;
-	
+    
 #ifdef PLUGIN_MAGIC
 #ifdef MAGIC_LOAD_BINARY
     magicState.setGuiValueTree(BinaryData::magic_xml, BinaryData::magic_xmlSize);

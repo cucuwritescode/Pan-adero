@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="L9dULy" name="panadero" projectType="audioplug" version="1.0.0"
+              bundleIdentifier="com.cucudsp.panadero" includeBinaryInAppConfig="1"
+              buildVST="0" buildVST3="1" buildAU="1" buildAUv3="1" buildRTAS="0"
+              buildAAX="0" buildStandalone="1" pluginName="Pan-adero" pluginDesc="autopan effect plugin."
+              pluginManufacturer="cucu dsp" pluginManufacturerCode="Manu" pluginCode="6221"
+              pluginChannelConfigs="" pluginIsSynth="0" pluginWantsMidiIn="1"
+              pluginProducesMidiOut="1" pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0"
+              pluginAUExportPrefix="panaderoAU" pluginRTASCategory="" aaxIdentifier="com.cucudsp.panadero"
+              pluginAAXCategory="2" pluginFormats="buildAU,buildAUv3,buildVST3,buildStandalone"
+              displaySplashScreen="1" jucerFormatVersion="1" enableIAA="0"
+              pluginCharacteristicsValue="pluginWantsMidiIn,pluginProducesMidiOut"
+              companyName="cucu dsp">
+  <MAINGROUP id="DIThxi" name="panadero">
+    <GROUP id="{C839BF35-9353-B32F-2439-36DB690FACA8}" name="Amelia">
+      <FILE id="W2YkSB" name="Amelia.ttf" compile="0" resource="1" file="../../../../Developer/GUI inspiration/Amelia/Amelia.ttf"/>
+      <FILE id="S6NSnf" name="ffonts.net.htm" compile="0" resource="1" file="../../../../Developer/GUI inspiration/Amelia/ffonts.net.htm"/>
+      <FILE id="O5qPBO" name="ffonts.net.txt" compile="0" resource="1" file="../../../../Developer/GUI inspiration/Amelia/ffonts.net.txt"/>
+      <FILE id="kdr4AT" name="install-a-new-font.txt" compile="0" resource="1"
+            file="../../../../Developer/GUI inspiration/Amelia/install-a-new-font.txt"/>
+      <FILE id="bzA8tc" name="quick_tips.html" compile="0" resource="1" file="../../../../Developer/GUI inspiration/Amelia/quick_tips.html"/>
+    </GROUP>
+    <GROUP id="{2A107946-99F8-DD0A-CB5E-5CECD2AD4986}" name="Fonts">
+      <GROUP id="{A8365834-8B04-8EBC-7F81-807A4662D623}" name="berthold-akzidenz-grotesk-be-9">
+        <FILE id="qy1Spd" name="Akzidenz-grotesk-be-bold-condensed.ttf" compile="0"
+              resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Akzidenz-grotesk-be-bold-condensed.ttf"/>
+        <FILE id="usbMrK" name="Akzidenz-grotesk-be-bold-extended-italic.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Akzidenz-grotesk-be-bold-extended-italic.ttf"/>
+        <FILE id="nMN9LI" name="Akzidenz-grotesk-be-bold-extended.ttf" compile="0"
+              resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Akzidenz-grotesk-be-bold-extended.ttf"/>
+        <FILE id="qYq0xV" name="Akzidenz-grotesk-be-bold-italic.ttf" compile="0"
+              resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Akzidenz-grotesk-be-bold-italic.ttf"/>
+        <FILE id="ijWKMQ" name="Berthold-akzidenz-grotesk-be-bold.ttf" compile="0"
+              resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-bold.ttf"/>
+        <FILE id="Y4wNUa" name="Berthold-akzidenz-grotesk-be-condensed.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-condensed.ttf"/>
+        <FILE id="zyi33B" name="Berthold-akzidenz-grotesk-be-extended.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-extended.ttf"/>
+        <FILE id="NOQUfS" name="Berthold-akzidenz-grotesk-be-extra-bold-condensed-italic.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-extra-bold-condensed-italic.ttf"/>
+        <FILE id="DUPiwm" name="Berthold-akzidenz-grotesk-be-extra-bold-condensed.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-extra-bold-condensed.ttf"/>
+        <FILE id="aKBWdB" name="Berthold-akzidenz-grotesk-be-extra-bold.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-extra-bold.ttf"/>
+        <FILE id="eORMfR" name="Berthold-akzidenz-grotesk-be-light-condensed.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-light-condensed.ttf"/>
+        <FILE id="D2CTuh" name="Berthold-akzidenz-grotesk-be-light-extended.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-light-extended.ttf"/>
+        <FILE id="thYgEe" name="Berthold-akzidenz-grotesk-be-light.ttf" compile="0"
+              resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-light.ttf"/>
+        <FILE id="O8rXhu" name="Berthold-akzidenz-grotesk-be-medium-condensed-italic.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-medium-condensed-italic.ttf"/>
+        <FILE id="tx6Tjg" name="Berthold-akzidenz-grotesk-be-medium-condensed.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-medium-condensed.ttf"/>
+        <FILE id="DHIqKY" name="Berthold-akzidenz-grotesk-be-medium-extended.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-medium-extended.ttf"/>
+        <FILE id="o7eT7o" name="Berthold-akzidenz-grotesk-be-medium-italic.ttf"
+              compile="0" resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-medium-italic.ttf"/>
+        <FILE id="qT6Q5V" name="Berthold-akzidenz-grotesk-be-medium.ttf" compile="0"
+              resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-medium.ttf"/>
+        <FILE id="WbG2Fk" name="Berthold-akzidenz-grotesk-be-regular.ttf" compile="0"
+              resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-regular.ttf"/>
+        <FILE id="P0EmcP" name="Berthold-akzidenz-grotesk-be-super.ttf" compile="0"
+              resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/Berthold-akzidenz-grotesk-be-super.ttf"/>
+        <FILE id="kkhfoQ" name="verthold-akzidenz-grotesk-be-italic.ttf" compile="0"
+              resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9/verthold-akzidenz-grotesk-be-italic.ttf"/>
+      </GROUP>
+      <GROUP id="{E0E137FD-C811-15EB-0BDE-0753415F4F82}" name="craw-modern">
+        <FILE id="XADYTm" name="OPTICrawModern-Bold.otf" compile="0" resource="1"
+              file="../../../../Desktop/Design/Fonts/craw-modern/OPTICrawModern-Bold.otf"/>
+        <FILE id="ks07Ad" name="OPTICrawModern.otf" compile="0" resource="1"
+              file="../../../../Desktop/Design/Fonts/craw-modern/OPTICrawModern.otf"/>
+      </GROUP>
+      <GROUP id="{24420B74-675A-D72F-F902-99A1FBB9850C}" name="embrionic">
+        <FILE id="ljkoHt" name="Embrionic55Swash.otf" compile="0" resource="1"
+              file="../../../../Desktop/Design/Fonts/embrionic/Embrionic55Swash.otf"/>
+        <FILE id="NXfVcJ" name="Embrionic85.otf" compile="0" resource="1" file="../../../../Desktop/Design/Fonts/embrionic/Embrionic85.otf"/>
+        <FILE id="HAEO5J" name="Embrionic85Swash.otf" compile="0" resource="1"
+              file="../../../../Desktop/Design/Fonts/embrionic/Embrionic85Swash.otf"/>
+      </GROUP>
+      <GROUP id="{84560EC1-9CD9-F35F-D2EB-34A68279982A}" name="Motter Ombra Normal">
+        <FILE id="yHGCCH" name="Motter Ombra Normal.ttf" compile="0" resource="1"
+              file="../../../../Desktop/Design/Fonts/Motter Ombra Normal/Motter Ombra Normal.ttf"/>
+        <FILE id="D10HTz" name="readme.html" compile="0" resource="1" file="../../../../Desktop/Design/Fonts/Motter Ombra Normal/readme.html"/>
+      </GROUP>
+      <FILE id="qJGVwi" name="Baby Teeth.ttf" compile="0" resource="1" file="../../../../Desktop/Design/Fonts/Baby Teeth.ttf"/>
+      <FILE id="zj8pKv" name="berthold-akzidenz-grotesk-be-9.zip" compile="0"
+            resource="1" file="../../../../Desktop/Design/Fonts/berthold-akzidenz-grotesk-be-9.zip"/>
+      <FILE id="KvOdNX" name="Clarendon Regular.otf" compile="0" resource="1"
+            file="../../../../Desktop/Design/Fonts/Clarendon Regular.otf"/>
+      <FILE id="q3DV5j" name="clarendon.zip" compile="0" resource="1" file="../../../../Desktop/Design/Fonts/clarendon.zip"/>
+      <FILE id="nFyI6w" name="craw-modern.zip" compile="0" resource="1" file="../../../../Desktop/Design/Fonts/craw-modern.zip"/>
+      <FILE id="FH2XGv" name="Neil Bold.otf" compile="0" resource="1" file="../../../../Desktop/Design/Fonts/Neil Bold.otf"/>
+      <FILE id="X9su3p" name="onyx.zip" compile="0" resource="1" file="../../../../Desktop/Design/Fonts/onyx.zip"/>
+      <FILE id="wwNgpG" name="OPTIOnyx.otf" compile="0" resource="1" file="../../../../Desktop/Design/Fonts/OPTIOnyx.otf"/>
+    </GROUP>
+    <GROUP id="{2FF29957-5723-DD0F-04B9-B3734A039CB2}" name="optima">
+      <FILE id="tQVJpO" name="Optima Medium.ttf" compile="0" resource="1"
+            file="../../../../Developer/GUI inspiration/optima/Optima Medium.ttf"/>
+      <FILE id="DERFBT" name="OPTIMA.TTF" compile="0" resource="1" file="../../../../Developer/GUI inspiration/optima/OPTIMA.TTF"/>
+      <FILE id="JmvzXm" name="OPTIMA_B.TTF" compile="0" resource="1" file="../../../../Developer/GUI inspiration/optima/OPTIMA_B.TTF"/>
+      <FILE id="pCVBjH" name="Optima_Italic.ttf" compile="0" resource="1"
+            file="../../../../Developer/GUI inspiration/optima/Optima_Italic.ttf"/>
+    </GROUP>
+    <GROUP id="{3EA8B881-7A5A-9E29-6E83-82528C15E424}" name="Source">
+      <FILE id="BecAMR" name="FaustPluginProcessor.cpp" compile="1" resource="0"
+            file="FaustPluginProcessor.cpp"/>
+    </GROUP>
+    <FILE id="f14Fc8" name="Olympik Regular.ttf" compile="0" resource="1"
+          file="../../../../Developer/GUI inspiration/Olympik Regular.ttf"/>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" extraCompilerFlags="-I /usr/local/include/ -DNVOICES=NUM_VOICES -DFAUSTFLOAT=float"
+               extraDefs="MIDICTRL ">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="panadero"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="panadero"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_utils" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_analytics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_animation" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_box2d" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_midi_ci" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_video" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_product_unlocking" path="../../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_analytics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_animation" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_box2d" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_midi_ci" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_osc" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_product_unlocking" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="0"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_QUICKTIME="disabled" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
